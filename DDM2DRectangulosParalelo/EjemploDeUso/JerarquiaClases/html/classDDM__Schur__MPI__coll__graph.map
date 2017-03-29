@@ -1,0 +1,25 @@
+<map id="DDM_Schur_MPI" name="DDM_Schur_MPI">
+<area shape="rect" id="node2" href="$classDDM__Schur.html" title="Clase para definir el método descomposición de dominio de subestructuración (Complemento de Schur) ..." alt="" coords="1504,293,1601,319"/>
+<area shape="rect" id="node3" href="$classBCGM.html" title="Clase para resolución del sistema lineal mediante CGM. " alt="" coords="1276,69,1337,95"/>
+<area shape="rect" id="node4" href="$classResuelveSistemaLineal.html" title="Clase para resolución del sistema lineal. " alt="" coords="955,165,1123,191"/>
+<area shape="rect" id="node21" href="$classDDM__SchurSubdominio.html" title="Clase para definir los comportamientos de un subdominio mediante el método de descomposición de dominio..." alt="" coords="1220,405,1393,431"/>
+<area shape="rect" id="node5" href="$classMatriz.html" title="Clase base para el trabajar con matrices de punto flotante. " alt="" coords="175,397,237,423"/>
+<area shape="rect" id="node13" href="$classMatrizDensa.html" title="Clase para el trabajar con matrices densas de punto flotante. " alt="" coords="468,359,571,386"/>
+<area shape="rect" id="node23" href="$classMatrizBandDisp.html" title="Clase base para trabajar con matrices bandadas y dispersas. " alt="" coords="595,425,717,451"/>
+<area shape="rect" id="node6" href="$classMatriz__Base.html" title="Clase base para el trabajar con matrices. " alt="" coords="5,874,105,901"/>
+<area shape="rect" id="node19" href="$classMatrizInt.html" title="Clase para el trabajar con matrices con etradas enteras. " alt="" coords="324,954,401,981"/>
+<area shape="rect" id="node20" href="$classMatrizTamanoVariable.html" title="Clase para el trabajar con matrices de tamaño variable. " alt="" coords="281,874,444,901"/>
+<area shape="rect" id="node7" href="$classVector.html" title="Clase para el trabajar con vectores de punto flotante. " alt="" coords="755,638,818,665"/>
+<area shape="rect" id="node22" href="$classVectorExtendido.html" title="Clase para el trabajar con vectores de punto foltante que extiende a un vector existente. " alt="" coords="975,665,1102,691"/>
+<area shape="rect" id="node8" href="$classVector__Base.html" title="Clase base para el trabajar con vectores. " alt="" coords="155,689,257,715"/>
+<area shape="rect" id="node14" href="$classVectorInt.html" title="Clase para el trabajar con vectores con valores enteros. " alt="" coords="480,766,559,793"/>
+<area shape="rect" id="node9" href="$classProductoPunto.html" title="Clase para implementar el producto punto. " alt="" coords="981,10,1097,37"/>
+<area shape="rect" id="node10" href="$classMultOp.html" title="Clase para implementar la multiplicación de la matriz por el vector. " alt="" coords="1005,87,1072,114"/>
+<area shape="rect" id="node11" href="$classProblema__2D.html" title="Clase base para definir un problema en dos dimensiones. " alt="" coords="985,286,1093,313"/>
+<area shape="rect" id="node12" href="$classProblema.html" title="Clase base para definir un problema. " alt="" coords="745,303,828,330"/>
+<area shape="rect" id="node18" href="$classGeometria.html" title="Clase base para generar una geometria. " alt="" coords="741,862,832,889"/>
+<area shape="rect" id="node15" href="$classLineales.html" title="Clase para definir a los interpoladores lineales para el problema en dos dimensiones. " alt="" coords="749,209,824,235"/>
+<area shape="rect" id="node16" href="$classCtrlMemoria.html" title="Clase con multiples comportamientos para manipular memoria. " alt="" coords="989,223,1089,250"/>
+<area shape="rect" id="node17" href="$classGeometria__2D.html" title="Clase base para generar una geometria en 2D. " alt="" coords="981,879,1096,906"/>
+<area shape="rect" id="node24" href="$classEsquema__ME.html" title="Clase base para definir el Esquema Maestro&#45;Esclavo en MPI. " alt="" coords="1499,343,1607,370"/>
+</map>

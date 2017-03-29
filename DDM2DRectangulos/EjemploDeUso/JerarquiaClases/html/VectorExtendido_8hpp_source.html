@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fichero Fuente VectorExtendido.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>PÃ¡ginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="examples.html"><span>Ejemplos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">VectorExtendido.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="VectorExtendido_8hpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Clase para el trabajar con vectores de punto foltante que extiende a un vector existente //</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Análisis y Diseño y Programación:                                                        //</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Nombre:   Antonio Carrillo Ledesma                                                       //</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// E-mail:   acl@www.mmc.geofisica.unam.mx                                                  //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// Página:   http://www.mmc.geofisica.unam.mx/acl                                           //</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Este programa es software libre. Puede redistribuirlo y/o modificarlo                    //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// bajo los términos de la Licencia Pública General de GNU según es                         //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// publicada por la Free Software Foundation, bien de la versión 2 de                       //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// dicha Licencia o bien (según su elección) de cualquier versión                           //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// posterior.                                                                               //</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Este programa se distribuye con la esperanza de que sea útil, pero SIN                   //</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin                      //</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la                        //</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Licencia Pública General de GNU para más detalles.                                       //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Debería haber recibido una copia de la Licencia Pública General junto                    //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// con este programa. Si no ha sido así, escriba a la Free Software                         //</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Foundation, Inc., en 675 Mass Ave, Cambridge, MA 02139, EEUU.                            //</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef __VectorExtendido__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define __VectorExtendido__</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Vector_8hpp.html">Vector.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classVectorExtendido.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVectorExtendido.html">VectorExtendido</a> : <span class="keyword">public</span> <a class="code" href="classVector__Base.html">Vector_Base</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a77b2686cda9d043dc4b930fff34409c9">   48</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classVectorExtendido.html#a77b2686cda9d043dc4b930fff34409c9">TE</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a1b93c4e2c449ea9af13fffb0cb450a71">   51</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classVectorExtendido.html#a1b93c4e2c449ea9af13fffb0cb450a71">TO</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a59fbbb405fb14ff4c12ae4acb8700476">   54</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classVectorExtendido.html#a59fbbb405fb14ff4c12ae4acb8700476">Num</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a2885a882e89a2f794642491a99ea849f">   57</a></span>&#160;   <a class="code" href="classVector.html">Vector</a> *<a class="code" href="classVectorExtendido.html#a2885a882e89a2f794642491a99ea849f">V1</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#aae04ee6c59ae46f4757b4811b69628d1">   60</a></span>&#160;   <a class="code" href="classVector.html">Vector</a> *<a class="code" href="classVectorExtendido.html#aae04ee6c59ae46f4757b4811b69628d1">V2</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a0371be802ac47941a26c7462f796b1f1">   63</a></span>&#160;   <span class="keywordtype">int</span> *<a class="code" href="classVectorExtendido.html#a0371be802ac47941a26c7462f796b1f1">Ind</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classVectorExtendido.html#a2421ad6028918010dda1e3ebcbbb9085">solicitaMemoria</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a9277e582de9b320a382da555c469a186">   78</a></span>&#160;   <a class="code" href="classVectorExtendido.html#a9277e582de9b320a382da555c469a186">VectorExtendido</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> col, <a class="code" href="classVector.html">Vector</a> *v, <span class="keyword">const</span> <span class="keywordtype">char</span> *nmb) : <a class="code" href="classVector__Base.html">Vector_Base</a>()</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <a class="code" href="classVector__Base.html#acf0ac045a79e8b3b43545d75aedcdc25">Col</a> = col;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      Num = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">if</span> (v)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         V1 = v;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         TO = V1-&gt;<a class="code" href="classVector__Base.html#aa4b93c305cf6888b4005817604579179">columnas</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;         TE = <a class="code" href="classVector__Base.html#acf0ac045a79e8b3b43545d75aedcdc25">Col</a> - V1-&gt;<a class="code" href="classVector__Base.html#aa4b93c305cf6888b4005817604579179">columnas</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         V1 = NULL;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;         TO = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;         TE = <a class="code" href="classVector__Base.html#acf0ac045a79e8b3b43545d75aedcdc25">Col</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <a class="code" href="classVectorExtendido.html#a2421ad6028918010dda1e3ebcbbb9085">solicitaMemoria</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="classVector__Base.html#aa2d154b612c6d9450fd0a1c7bb8b8ad4">asignaNombre</a>(nmb);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a9ae9d4a5ac2fa88b61aa9fd6d0e65db1">  100</a></span>&#160;   <a class="code" href="classVectorExtendido.html#a9ae9d4a5ac2fa88b61aa9fd6d0e65db1">~VectorExtendido</a>()</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">delete</span> <a class="code" href="classVectorExtendido.html#aae04ee6c59ae46f4757b4811b69628d1">V2</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      V2 = NULL;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keyword">delete</span> []<a class="code" href="classVectorExtendido.html#a0371be802ac47941a26c7462f796b1f1">Ind</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      Ind = NULL;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classVectorExtendido.html#a31837c79089c177f1c147f770f8fa853">inicializa</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> col, <span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classVectorExtendido.html#a31837c79089c177f1c147f770f8fa853">inicializa</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> col, <span class="keyword">const</span> <span class="keywordtype">int</span> ind);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a3c56783d3ab5dff978a22c610707baf2">  124</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classVectorExtendido.html#a3c56783d3ab5dff978a22c610707baf2">operator [] </a>(<span class="keywordtype">size_t</span> col)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;   {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classVectorExtendido.html#a5aa8b5b61379c4f59196edc031962a41">retorna</a>(col);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;   }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a4cb72b4d9ff46b4f2e21b8edc84ecf6c">  132</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classVectorExtendido.html#a4cb72b4d9ff46b4f2e21b8edc84ecf6c">operator () </a>(<span class="keywordtype">size_t</span> col)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;   {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classVectorExtendido.html#a5aa8b5b61379c4f59196edc031962a41">retorna</a>(col);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;   }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classVectorExtendido.html#a26fa7f302ea79f1fe18f9def6b48c6a8">asigna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> col, <span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;   <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classVectorExtendido.html#a5aa8b5b61379c4f59196edc031962a41">retorna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> col);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classVectorExtendido.html#a14e959a307562c63ffcf6656f97fe1b3">visualiza</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> tp, <span class="keywordtype">int</span> nl = 0, <span class="keywordtype">int</span> num = 0);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classVectorExtendido.html#aa2e8b85653e22ed4221c2d93f5296d7f">copia</a>(<a class="code" href="classVector.html">Vector</a> *a);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classVectorExtendido.html#a1b8b2def54d77fedf03cef1ee62d4477">  159</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classVectorExtendido.html#a1b8b2def54d77fedf03cef1ee62d4477">visualizaInformacion</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;   {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      V1-&gt;<a class="code" href="classVector.html#a4c75253f1e428a6cc8f5e812f92c067c">visualizaInformacion</a>();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      V2-&gt;<a class="code" href="classVector.html#a4c75253f1e428a6cc8f5e812f92c067c">visualizaInformacion</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      printf(<span class="stringliteral">&quot;\nVector extendido \&quot;%s\&quot; de dimensión: %d \n&quot;</span>,<a class="code" href="classVector__Base.html#af5976eb1c3a2c8f5b463f4f16102490f">Nmb</a>,<a class="code" href="classVector__Base.html#acf0ac045a79e8b3b43545d75aedcdc25">Col</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;   }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classVectorExtendido_html"><div class="ttname"><a href="classVectorExtendido.html">VectorExtendido</a></div><div class="ttdoc">Clase para el trabajar con vectores de punto foltante que extiende a un vector existente. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:43</div></div>
+<div class="ttc" id="classVectorExtendido_html_a31837c79089c177f1c147f770f8fa853"><div class="ttname"><a href="classVectorExtendido.html#a31837c79089c177f1c147f770f8fa853">VectorExtendido::inicializa</a></div><div class="ttdeci">void inicializa(const int col, const ldouble val)</div><div class="ttdoc">Inicializa la columna del vector extendido con el valor. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.cpp:65</div></div>
+<div class="ttc" id="classVectorExtendido_html_a2421ad6028918010dda1e3ebcbbb9085"><div class="ttname"><a href="classVectorExtendido.html#a2421ad6028918010dda1e3ebcbbb9085">VectorExtendido::solicitaMemoria</a></div><div class="ttdeci">void solicitaMemoria(void)</div><div class="ttdoc">Solicita la memoria necesaria para contener los valores del vector extendido. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.cpp:40</div></div>
+<div class="ttc" id="classVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdoc">Clase para el trabajar con vectores de punto flotante. </div><div class="ttdef"><b>Definition:</b> Vector.hpp:47</div></div>
+<div class="ttc" id="classVectorExtendido_html_aae04ee6c59ae46f4757b4811b69628d1"><div class="ttname"><a href="classVectorExtendido.html#aae04ee6c59ae46f4757b4811b69628d1">VectorExtendido::V2</a></div><div class="ttdeci">Vector * V2</div><div class="ttdoc">Puntero al vector aumentado. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:60</div></div>
+<div class="ttc" id="Definiciones_8hpp_html_a8b7a76744fa99ba43b09c8fd0b715cc3"><div class="ttname"><a href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a></div><div class="ttdeci">double ldouble</div><div class="ttdoc">Define ldouble como double. </div><div class="ttdef"><b>Definition:</b> Definiciones.hpp:50</div></div>
+<div class="ttc" id="classVectorExtendido_html_a9277e582de9b320a382da555c469a186"><div class="ttname"><a href="classVectorExtendido.html#a9277e582de9b320a382da555c469a186">VectorExtendido::VectorExtendido</a></div><div class="ttdeci">VectorExtendido(const int col, Vector *v, const char *nmb)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:78</div></div>
+<div class="ttc" id="classVector__Base_html_aa2d154b612c6d9450fd0a1c7bb8b8ad4"><div class="ttname"><a href="classVector__Base.html#aa2d154b612c6d9450fd0a1c7bb8b8ad4">Vector_Base::asignaNombre</a></div><div class="ttdeci">void asignaNombre(const char *nmb)</div><div class="ttdoc">Asigna nombre al vector. </div><div class="ttdef"><b>Definition:</b> Vector_Base.hpp:80</div></div>
+<div class="ttc" id="classVectorExtendido_html_a5aa8b5b61379c4f59196edc031962a41"><div class="ttname"><a href="classVectorExtendido.html#a5aa8b5b61379c4f59196edc031962a41">VectorExtendido::retorna</a></div><div class="ttdeci">ldouble retorna(const int col)</div><div class="ttdoc">Retorna el valor de la columna col. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.cpp:135</div></div>
+<div class="ttc" id="classVectorExtendido_html_a14e959a307562c63ffcf6656f97fe1b3"><div class="ttname"><a href="classVectorExtendido.html#a14e959a307562c63ffcf6656f97fe1b3">VectorExtendido::visualiza</a></div><div class="ttdeci">void visualiza(const int tp, int nl=0, int num=0)</div><div class="ttdoc">Visualiza el vector. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.cpp:164</div></div>
+<div class="ttc" id="classVectorExtendido_html_a4cb72b4d9ff46b4f2e21b8edc84ecf6c"><div class="ttname"><a href="classVectorExtendido.html#a4cb72b4d9ff46b4f2e21b8edc84ecf6c">VectorExtendido::operator()</a></div><div class="ttdeci">ldouble operator()(size_t col)</div><div class="ttdoc">Retorna el valor de la columna col. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:132</div></div>
+<div class="ttc" id="classVectorExtendido_html_a1b93c4e2c449ea9af13fffb0cb450a71"><div class="ttname"><a href="classVectorExtendido.html#a1b93c4e2c449ea9af13fffb0cb450a71">VectorExtendido::TO</a></div><div class="ttdeci">int TO</div><div class="ttdoc">Tamaño vector original. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:51</div></div>
+<div class="ttc" id="classVectorExtendido_html_a3c56783d3ab5dff978a22c610707baf2"><div class="ttname"><a href="classVectorExtendido.html#a3c56783d3ab5dff978a22c610707baf2">VectorExtendido::operator[]</a></div><div class="ttdeci">ldouble operator[](size_t col)</div><div class="ttdoc">Retorna el valor de la columna col. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:124</div></div>
+<div class="ttc" id="classVectorExtendido_html_a77b2686cda9d043dc4b930fff34409c9"><div class="ttname"><a href="classVectorExtendido.html#a77b2686cda9d043dc4b930fff34409c9">VectorExtendido::TE</a></div><div class="ttdeci">int TE</div><div class="ttdoc">Tamaño extendido. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:48</div></div>
+<div class="ttc" id="classVectorExtendido_html_a59fbbb405fb14ff4c12ae4acb8700476"><div class="ttname"><a href="classVectorExtendido.html#a59fbbb405fb14ff4c12ae4acb8700476">VectorExtendido::Num</a></div><div class="ttdeci">int Num</div><div class="ttdoc">Numero de valores adicionados. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:54</div></div>
+<div class="ttc" id="classVectorExtendido_html_a1b8b2def54d77fedf03cef1ee62d4477"><div class="ttname"><a href="classVectorExtendido.html#a1b8b2def54d77fedf03cef1ee62d4477">VectorExtendido::visualizaInformacion</a></div><div class="ttdeci">void visualizaInformacion(void)</div><div class="ttdoc">Visualiza información general del vector. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:159</div></div>
+<div class="ttc" id="classVectorExtendido_html_a0371be802ac47941a26c7462f796b1f1"><div class="ttname"><a href="classVectorExtendido.html#a0371be802ac47941a26c7462f796b1f1">VectorExtendido::Ind</a></div><div class="ttdeci">int * Ind</div><div class="ttdoc">Puntero a los indices. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:63</div></div>
+<div class="ttc" id="classVector__Base_html_acf0ac045a79e8b3b43545d75aedcdc25"><div class="ttname"><a href="classVector__Base.html#acf0ac045a79e8b3b43545d75aedcdc25">Vector_Base::Col</a></div><div class="ttdeci">int Col</div><div class="ttdoc">Número de columnas del vector. </div><div class="ttdef"><b>Definition:</b> Vector_Base.hpp:54</div></div>
+<div class="ttc" id="classVector__Base_html_af5976eb1c3a2c8f5b463f4f16102490f"><div class="ttname"><a href="classVector__Base.html#af5976eb1c3a2c8f5b463f4f16102490f">Vector_Base::Nmb</a></div><div class="ttdeci">char * Nmb</div><div class="ttdoc">Nombre del vector. </div><div class="ttdef"><b>Definition:</b> Vector_Base.hpp:57</div></div>
+<div class="ttc" id="Vector_8hpp_html"><div class="ttname"><a href="Vector_8hpp.html">Vector.hpp</a></div></div>
+<div class="ttc" id="classVectorExtendido_html_a26fa7f302ea79f1fe18f9def6b48c6a8"><div class="ttname"><a href="classVectorExtendido.html#a26fa7f302ea79f1fe18f9def6b48c6a8">VectorExtendido::asigna</a></div><div class="ttdeci">void asigna(const int col, const ldouble val)</div><div class="ttdoc">Asigna el valor val a la columna col. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.cpp:110</div></div>
+<div class="ttc" id="classVector_html_a4c75253f1e428a6cc8f5e812f92c067c"><div class="ttname"><a href="classVector.html#a4c75253f1e428a6cc8f5e812f92c067c">Vector::visualizaInformacion</a></div><div class="ttdeci">void visualizaInformacion(void)</div><div class="ttdoc">Visualiza información general del vector. </div><div class="ttdef"><b>Definition:</b> Vector.hpp:287</div></div>
+<div class="ttc" id="classVectorExtendido_html_a2885a882e89a2f794642491a99ea849f"><div class="ttname"><a href="classVectorExtendido.html#a2885a882e89a2f794642491a99ea849f">VectorExtendido::V1</a></div><div class="ttdeci">Vector * V1</div><div class="ttdoc">Puntero al vector original. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:57</div></div>
+<div class="ttc" id="classVector__Base_html"><div class="ttname"><a href="classVector__Base.html">Vector_Base</a></div><div class="ttdoc">Clase base para el trabajar con vectores. </div><div class="ttdef"><b>Definition:</b> Vector_Base.hpp:49</div></div>
+<div class="ttc" id="classVectorExtendido_html_a9ae9d4a5ac2fa88b61aa9fd6d0e65db1"><div class="ttname"><a href="classVectorExtendido.html#a9ae9d4a5ac2fa88b61aa9fd6d0e65db1">VectorExtendido::~VectorExtendido</a></div><div class="ttdeci">~VectorExtendido()</div><div class="ttdoc">Destructor de la clase. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.hpp:100</div></div>
+<div class="ttc" id="classVectorExtendido_html_aa2e8b85653e22ed4221c2d93f5296d7f"><div class="ttname"><a href="classVectorExtendido.html#aa2e8b85653e22ed4221c2d93f5296d7f">VectorExtendido::copia</a></div><div class="ttdeci">void copia(Vector *a)</div><div class="ttdoc">Copia el contenido del vector al vector a. </div><div class="ttdef"><b>Definition:</b> VectorExtendido.cpp:201</div></div>
+<div class="ttc" id="classVector__Base_html_aa4b93c305cf6888b4005817604579179"><div class="ttname"><a href="classVector__Base.html#aa4b93c305cf6888b4005817604579179">Vector_Base::columnas</a></div><div class="ttdeci">int columnas(void)</div><div class="ttdoc">Retorna el número de columnas del vector. </div><div class="ttdef"><b>Definition:</b> Vector_Base.hpp:105</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el SÃ¡bado, 20 de Febrero de 2016 09:01:24 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

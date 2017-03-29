@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fichero Fuente Matriz.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>PÃ¡ginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="examples.html"><span>Ejemplos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Matriz.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Matriz_8hpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Clase base para el trabajar con matrices de punto flotante                               //</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Análisis y Diseño y Programación:                                                        //</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Nombre:   Antonio Carrillo Ledesma                                                       //</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// E-mail:   acl@www.mmc.igeofcu.unam.mx                                                    //</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Página:   http://www.mmc.igeofcu.unam.mx/acl                                             //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Este programa es software libre. Puede redistribuirlo y/o modificarlo                    //</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// bajo los términos de la Licencia Pública General de GNU según es                         //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// publicada por la Free Software Foundation, bien de la versión 2 de                       //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// dicha Licencia o bien (según su elección) de cualquier versión                           //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// posterior.                                                                               //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Este programa se distribuye con la esperanza de que sea útil, pero SIN                   //</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin                      //</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la                        //</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Licencia Pública General de GNU para más detalles.                                       //</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Debería haber recibido una copia de la Licencia Pública General junto                    //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// con este programa. Si no ha sido así, escriba a la Free Software                         //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Foundation, Inc., en 675 Mass Ave, Cambridge, MA 02139, EEUU.                            //</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef __Matriz__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define __Matriz__</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Matriz__Base_8hpp.html">Matriz_Base.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Vector_8hpp.html">Vector.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMatriz.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMatriz.html">Matriz</a>: <span class="keyword">public</span> <a class="code" href="classMatriz__Base.html">Matriz_Base</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classMatriz.html#a3de4d8dad3117e47c796f1fff67f84a0">   50</a></span>&#160;   <a class="code" href="classMatriz.html#a3de4d8dad3117e47c796f1fff67f84a0">Matriz</a>(<span class="keywordtype">void</span>) : <a class="code" href="classMatriz__Base.html">Matriz_Base</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   {}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classMatriz.html#a75057364d880ba7302f20bbe57ba1df0">   57</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classMatriz.html#a75057364d880ba7302f20bbe57ba1df0">operator() </a>(<span class="keywordtype">size_t</span> ren, <span class="keywordtype">size_t</span> col)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classMatriz.html#ad94ee1eee9ed5ee47c6ad683eb9f1126">retorna</a>(ren,col);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a2160cd6f675747ebee795a760808b278">asigna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col, <span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val) = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keyword">virtual</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classMatriz.html#ad94ee1eee9ed5ee47c6ad683eb9f1126">retorna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col) = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classMatriz.html#a4f8d86065c25e915507658e242100a70">   78</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a4f8d86065c25e915507658e242100a70">retornaRenglon</a>(<span class="keywordtype">int</span> r, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> *arr, <span class="keywordtype">int</span> tam)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordtype">int</span> i, t = <a class="code" href="classMatriz__Base.html#a2ac5307d18ef6cd1df1efa7cd236ceb5">Col</a> &lt; tam ? <a class="code" href="classMatriz__Base.html#a2ac5307d18ef6cd1df1efa7cd236ceb5">Col</a> : tam;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">for</span> (i = 0; i &lt; t; i++) arr[i] = <a class="code" href="classMatriz.html#ad94ee1eee9ed5ee47c6ad683eb9f1126">retorna</a>(r,i);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#aade2c1cfb19818da520d01e23de7949d">inicializa</a>(<span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val) = 0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#ad2d5db8321d3cfe3f6f0cd5b1a8e2624">inicializaDiagonal</a>(<span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a34e872825b7cd2db567d853c54924807">visualiza</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> tp);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a74023f614956db73f719002e754ba36a">convierte</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> *a, <span class="keywordtype">int</span> ren, <span class="keywordtype">int</span> tam);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a74023f614956db73f719002e754ba36a">convierte</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> **a, <span class="keywordtype">int</span> ren, <span class="keywordtype">int</span> col);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a74023f614956db73f719002e754ba36a">convierte</a>(<span class="keywordtype">int</span> ren, <a class="code" href="classVector.html">Vector</a> *a);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a74023f614956db73f719002e754ba36a">convierte</a>(<span class="keywordtype">int</span> ren, <span class="keywordtype">int</span> col, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> *a);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a94e6e5fe351f6e473176c69cfa9cafd6">retornaVector</a>(<a class="code" href="classVector.html">Vector</a> *a);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a03d02833fd66884fad495264948fceb0">copia</a>(<a class="code" href="classMatriz.html">Matriz</a> *a);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a9d19ded923f861daea1dcdf79012da67">suma</a>(<a class="code" href="classMatriz.html">Matriz</a> *a, <a class="code" href="classMatriz.html">Matriz</a> *b);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a9d19ded923f861daea1dcdf79012da67">suma</a>(<a class="code" href="classMatriz.html">Matriz</a> *a);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a88a996d62d6fd828b4d9a8b1886c050a">resta</a>(<a class="code" href="classMatriz.html">Matriz</a> *a, <a class="code" href="classMatriz.html">Matriz</a> *b);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a88a996d62d6fd828b4d9a8b1886c050a">resta</a>(<a class="code" href="classMatriz.html">Matriz</a> *a);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#af1dbbc910976968e82569516530000e5">multiplica</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> esc) = 0;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#af1dbbc910976968e82569516530000e5">multiplica</a>(<a class="code" href="classVector.html">Vector</a> *b, <a class="code" href="classVector.html">Vector</a> *r) = 0;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a92416f58a0bfd5c2e3ff510ad1dc4836">transpuesta</a>(<a class="code" href="classMatriz.html">Matriz</a> *a);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classMatriz.html#ae7908e214605407496edc789f41d2f78">iguales</a>(<a class="code" href="classMatriz.html">Matriz</a> *a, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> eps = 1e-14);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;   <span class="keywordtype">int</span>  <a class="code" href="classMatriz.html#ab3b133a440f79e66455c2676244809bc">maximoTamanoColumnaOcupado</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;   <span class="keywordtype">int</span>  <a class="code" href="classMatriz.html#a66a6574db4f0ffab55739c691b8a66f6">entradasDistintasCero</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classMatriz.html#a3e637b735b57f721ffd3b32b55763114">retornaNumeroColumnasBanda</a>(<span class="keywordtype">int</span> ren) = 0;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classMatriz.html#afdc018e061df49de17784ea0958d1641">retornaNumeroColumna</a>(<span class="keywordtype">int</span> ren, <span class="keywordtype">int</span> ind) = 0;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classMatriz.html#a6f21e4ab18bf4ec001e22aa0d26bf219">retornaValorColumna</a>(<span class="keywordtype">int</span> ren, <span class="keywordtype">int</span> ind) = 0;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;};</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classMatriz_html_aade2c1cfb19818da520d01e23de7949d"><div class="ttname"><a href="classMatriz.html#aade2c1cfb19818da520d01e23de7949d">Matriz::inicializa</a></div><div class="ttdeci">virtual void inicializa(const ldouble val)=0</div><div class="ttdoc">Inicializa la matriz con el valor indicado. </div></div>
+<div class="ttc" id="classMatriz_html_a74023f614956db73f719002e754ba36a"><div class="ttname"><a href="classMatriz.html#a74023f614956db73f719002e754ba36a">Matriz::convierte</a></div><div class="ttdeci">void convierte(ldouble *a, int ren, int tam)</div><div class="ttdoc">Convierte el arreglo unidimensional en parte de la matriz en el renglon Ren y de tamaño Tam...</div><div class="ttdef"><b>Definition:</b> Matriz.cpp:88</div></div>
+<div class="ttc" id="classMatriz_html_a3e637b735b57f721ffd3b32b55763114"><div class="ttname"><a href="classMatriz.html#a3e637b735b57f721ffd3b32b55763114">Matriz::retornaNumeroColumnasBanda</a></div><div class="ttdeci">virtual int retornaNumeroColumnasBanda(int ren)=0</div><div class="ttdoc">Retorna el número de columnas de la banda para el renglon indicado. </div></div>
+<div class="ttc" id="classVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdoc">Clase para el trabajar con vectores de punto flotante. </div><div class="ttdef"><b>Definition:</b> Vector.hpp:47</div></div>
+<div class="ttc" id="classMatriz_html"><div class="ttname"><a href="classMatriz.html">Matriz</a></div><div class="ttdoc">Clase base para el trabajar con matrices de punto flotante. </div><div class="ttdef"><b>Definition:</b> Matriz.hpp:44</div></div>
+<div class="ttc" id="Definiciones_8hpp_html_a8b7a76744fa99ba43b09c8fd0b715cc3"><div class="ttname"><a href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a></div><div class="ttdeci">double ldouble</div><div class="ttdoc">Define ldouble como double. </div><div class="ttdef"><b>Definition:</b> Definiciones.hpp:50</div></div>
+<div class="ttc" id="classMatriz_html_a03d02833fd66884fad495264948fceb0"><div class="ttname"><a href="classMatriz.html#a03d02833fd66884fad495264948fceb0">Matriz::copia</a></div><div class="ttdeci">virtual void copia(Matriz *a)</div><div class="ttdoc">Copia el contenido de la matriz a la matriz pasada como parámetro. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:371</div></div>
+<div class="ttc" id="classMatriz_html_a66a6574db4f0ffab55739c691b8a66f6"><div class="ttname"><a href="classMatriz.html#a66a6574db4f0ffab55739c691b8a66f6">Matriz::entradasDistintasCero</a></div><div class="ttdeci">int entradasDistintasCero(void)</div><div class="ttdoc">Retorna el número de entradas distintas de cero en la matriz. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:355</div></div>
+<div class="ttc" id="classMatriz_html_a2160cd6f675747ebee795a760808b278"><div class="ttname"><a href="classMatriz.html#a2160cd6f675747ebee795a760808b278">Matriz::asigna</a></div><div class="ttdeci">virtual void asigna(const int ren, const int col, const ldouble val)=0</div><div class="ttdoc">Asigna el valor indicado en el renglon y columna solicitado. </div></div>
+<div class="ttc" id="classMatriz_html_ab3b133a440f79e66455c2676244809bc"><div class="ttname"><a href="classMatriz.html#ab3b133a440f79e66455c2676244809bc">Matriz::maximoTamanoColumnaOcupado</a></div><div class="ttdeci">int maximoTamanoColumnaOcupado(void)</div><div class="ttdoc">Retorna el máximo tamaño en todas las columnas que sean distintos de cero. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:337</div></div>
+<div class="ttc" id="classMatriz_html_a88a996d62d6fd828b4d9a8b1886c050a"><div class="ttname"><a href="classMatriz.html#a88a996d62d6fd828b4d9a8b1886c050a">Matriz::resta</a></div><div class="ttdeci">void resta(Matriz *a, Matriz *b)</div><div class="ttdoc">Resta a la matriz A la matriz B. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:249</div></div>
+<div class="ttc" id="classMatriz_html_af1dbbc910976968e82569516530000e5"><div class="ttname"><a href="classMatriz.html#af1dbbc910976968e82569516530000e5">Matriz::multiplica</a></div><div class="ttdeci">virtual void multiplica(ldouble esc)=0</div><div class="ttdoc">Multiplica la matriz por el escalar pasado como parametro. </div></div>
+<div class="ttc" id="classMatriz_html_a9d19ded923f861daea1dcdf79012da67"><div class="ttname"><a href="classMatriz.html#a9d19ded923f861daea1dcdf79012da67">Matriz::suma</a></div><div class="ttdeci">void suma(Matriz *a, Matriz *b)</div><div class="ttdoc">Suma las matrices A y B. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:203</div></div>
+<div class="ttc" id="classMatriz_html_a34e872825b7cd2db567d853c54924807"><div class="ttname"><a href="classMatriz.html#a34e872825b7cd2db567d853c54924807">Matriz::visualiza</a></div><div class="ttdeci">void visualiza(const int tp)</div><div class="ttdoc">Visualiza la matriz. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:51</div></div>
+<div class="ttc" id="classMatriz_html_afdc018e061df49de17784ea0958d1641"><div class="ttname"><a href="classMatriz.html#afdc018e061df49de17784ea0958d1641">Matriz::retornaNumeroColumna</a></div><div class="ttdeci">virtual int retornaNumeroColumna(int ren, int ind)=0</div><div class="ttdoc">Retorna el número de columna cuando se para en el renglon e indice de la banda. </div></div>
+<div class="ttc" id="classMatriz_html_ad2d5db8321d3cfe3f6f0cd5b1a8e2624"><div class="ttname"><a href="classMatriz.html#ad2d5db8321d3cfe3f6f0cd5b1a8e2624">Matriz::inicializaDiagonal</a></div><div class="ttdeci">void inicializaDiagonal(const ldouble val)</div><div class="ttdoc">Inicializa la matriz como una matriz diagonal con el valor indicado. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:38</div></div>
+<div class="ttc" id="classMatriz_html_ae7908e214605407496edc789f41d2f78"><div class="ttname"><a href="classMatriz.html#ae7908e214605407496edc789f41d2f78">Matriz::iguales</a></div><div class="ttdeci">int iguales(Matriz *a, ldouble eps=1e-14)</div><div class="ttdoc">Regresa verdadero si las matrices son iguales, cero en caso contrario. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:315</div></div>
+<div class="ttc" id="classMatriz_html_a4f8d86065c25e915507658e242100a70"><div class="ttname"><a href="classMatriz.html#a4f8d86065c25e915507658e242100a70">Matriz::retornaRenglon</a></div><div class="ttdeci">void retornaRenglon(int r, ldouble *arr, int tam)</div><div class="ttdoc">Retorna el contenido del renglon de la matriz en el arreglo. </div><div class="ttdef"><b>Definition:</b> Matriz.hpp:78</div></div>
+<div class="ttc" id="classMatriz_html_ad94ee1eee9ed5ee47c6ad683eb9f1126"><div class="ttname"><a href="classMatriz.html#ad94ee1eee9ed5ee47c6ad683eb9f1126">Matriz::retorna</a></div><div class="ttdeci">virtual ldouble retorna(const int ren, const int col)=0</div><div class="ttdoc">Retorna el valor del renglon y columna solicitado. </div></div>
+<div class="ttc" id="classMatriz__Base_html_a2ac5307d18ef6cd1df1efa7cd236ceb5"><div class="ttname"><a href="classMatriz__Base.html#a2ac5307d18ef6cd1df1efa7cd236ceb5">Matriz_Base::Col</a></div><div class="ttdeci">int Col</div><div class="ttdoc">Número de columnas. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.hpp:62</div></div>
+<div class="ttc" id="classMatriz_html_a3de4d8dad3117e47c796f1fff67f84a0"><div class="ttname"><a href="classMatriz.html#a3de4d8dad3117e47c796f1fff67f84a0">Matriz::Matriz</a></div><div class="ttdeci">Matriz(void)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> Matriz.hpp:50</div></div>
+<div class="ttc" id="Matriz__Base_8hpp_html"><div class="ttname"><a href="Matriz__Base_8hpp.html">Matriz_Base.hpp</a></div></div>
+<div class="ttc" id="classMatriz_html_a94e6e5fe351f6e473176c69cfa9cafd6"><div class="ttname"><a href="classMatriz.html#a94e6e5fe351f6e473176c69cfa9cafd6">Matriz::retornaVector</a></div><div class="ttdeci">void retornaVector(Vector *a)</div><div class="ttdoc">Retorna todo el contenido de la matriz como un vector. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:179</div></div>
+<div class="ttc" id="Vector_8hpp_html"><div class="ttname"><a href="Vector_8hpp.html">Vector.hpp</a></div></div>
+<div class="ttc" id="classMatriz__Base_html"><div class="ttname"><a href="classMatriz__Base.html">Matriz_Base</a></div><div class="ttdoc">Clase base para el trabajar con matrices. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.hpp:57</div></div>
+<div class="ttc" id="classMatriz_html_a6f21e4ab18bf4ec001e22aa0d26bf219"><div class="ttname"><a href="classMatriz.html#a6f21e4ab18bf4ec001e22aa0d26bf219">Matriz::retornaValorColumna</a></div><div class="ttdeci">virtual double retornaValorColumna(int ren, int ind)=0</div><div class="ttdoc">Retorna el valor de la columna cuando se para en el renglon e indice de la banda. ...</div></div>
+<div class="ttc" id="classMatriz_html_a92416f58a0bfd5c2e3ff510ad1dc4836"><div class="ttname"><a href="classMatriz.html#a92416f58a0bfd5c2e3ff510ad1dc4836">Matriz::transpuesta</a></div><div class="ttdeci">void transpuesta(Matriz *a)</div><div class="ttdoc">Transpone la matriz pasada como parámetro. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:294</div></div>
+<div class="ttc" id="classMatriz_html_a75057364d880ba7302f20bbe57ba1df0"><div class="ttname"><a href="classMatriz.html#a75057364d880ba7302f20bbe57ba1df0">Matriz::operator()</a></div><div class="ttdeci">ldouble operator()(size_t ren, size_t col)</div><div class="ttdoc">Retorna el valor del renglon y columna solicitado. </div><div class="ttdef"><b>Definition:</b> Matriz.hpp:57</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el SÃ¡bado, 20 de Febrero de 2016 09:04:18 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<map id="DDM_Schur_MPI" name="DDM_Schur_MPI">
+<area shape="rect" id="node2" href="$classDDM__Schur.html" title="Clase para definir el método descomposición de dominio de subestructuración (Complemento de Schur) ..." alt="" coords="129,155,226,181"/>
+<area shape="rect" id="node3" href="$classBCGM.html" title="Clase para resolución del sistema lineal mediante CGM. " alt="" coords="59,80,120,107"/>
+<area shape="rect" id="node4" href="$classResuelveSistemaLineal.html" title="Clase para resolución del sistema lineal. " alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node5" href="$classMultOp.html" title="Clase para implementar la multiplicación de la matriz por el vector. " alt="" coords="144,80,211,107"/>
+<area shape="rect" id="node6" href="$classProductoPunto.html" title="Clase para implementar el producto punto. " alt="" coords="235,80,351,107"/>
+<area shape="rect" id="node7" href="$classEsquema__ME.html" title="Clase base para definir el Esquema Maestro&#45;Esclavo en MPI. " alt="" coords="250,155,358,181"/>
+</map>

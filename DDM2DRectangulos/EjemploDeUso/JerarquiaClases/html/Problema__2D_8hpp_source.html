@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fichero Fuente Problema_2D.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>PÃ¡ginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="examples.html"><span>Ejemplos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Problema_2D.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Problema__2D_8hpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Clase base para definir un problema en dos dimensiones                                   //</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Análisis y Diseño y Programación:                                                        //</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Nombre:   Antonio Carrillo Ledesma                                                       //</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// E-mail:   acl@www.mmc.igeofcu.unam.mx                                                    //</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Página:   http://www.mmc.igeofcu.unam.mx/acl                                             //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Este programa es software libre. Puede redistribuirlo y/o modificarlo                    //</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// bajo los términos de la Licencia Pública General de GNU según es                         //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// publicada por la Free Software Foundation, bien de la versión 2 de                       //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// dicha Licencia o bien (según su elección) de cualquier versión                           //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// posterior.                                                                               //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Este programa se distribuye con la esperanza de que sea útil, pero SIN                   //</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin                      //</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la                        //</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Licencia Pública General de GNU para más detalles.                                       //</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Debería haber recibido una copia de la Licencia Pública General junto                    //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// con este programa. Si no ha sido así, escriba a la Free Software                         //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Foundation, Inc., en 675 Mass Ave, Cambridge, MA 02139, EEUU.                            //</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef __Problema_2D__</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define __Problema_2D__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Problema_8hpp.html">Problema.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Geometria__2D_8hpp.html">Geometria_2D.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Lineales_8hpp.html">Lineales.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classProblema__2D.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classProblema__2D.html">Problema_2D</a> : <span class="keyword">public</span> <a class="code" href="classProblema.html">Problema</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classProblema__2D.html#aea77ac87a8c12ff3778ef8b27f0cdb1c">   49</a></span>&#160;   <a class="code" href="classLineales.html">Lineales</a> <a class="code" href="classProblema__2D.html#aea77ac87a8c12ff3778ef8b27f0cdb1c">ln</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classProblema__2D.html#a37cc116ab4ffca21523c664830ae4953">   55</a></span>&#160;   <a class="code" href="classProblema__2D.html#a37cc116ab4ffca21523c664830ae4953">Problema_2D</a>(<span class="keywordtype">void</span>) : <a class="code" href="classProblema.html">Problema</a>()</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#afad0da936f6f9ddd9dea87f605590731">redimensiona</a>(2,2);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="classProblema.html#af5d2faafdbe43b73387ed8b9467a62da">TipoFrontera</a>.<a class="code" href="classVectorInt.html#a8beb066cc89cf71f03ceb61e0f32fac7">redimensiona</a>(4);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <a class="code" href="classProblema.html#a72be3a653336b70c36d8d9a7d75d0a98">Alcance_frontera</a>.<a class="code" href="classVectorInt.html#a8beb066cc89cf71f03ceb61e0f32fac7">redimensiona</a>(4);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classProblema__2D.html#a6d1e5c783eee68af3dfed2251821dab9">   66</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classProblema__2D.html#a6d1e5c783eee68af3dfed2251821dab9">inicializa</a>(<a class="code" href="classGeometria__2D.html">Geometria_2D</a> *ge, <span class="keywordtype">int</span> partx, <span class="keywordtype">int</span> party)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="comment">// Inicializa la particion</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      ge-&gt;<a class="code" href="classGeometria__2D.html#aa9c7f75c0326c1d35e5d41ff0268d0a1">inicializa</a>(&amp;<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>, partx, party);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">// Marca los nodos externos segun condiciones de frontera</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="comment">// Frontera 1 X = X0</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#afed4f69b2d4d61ba19ee03a58f920f44">tipoCondicionFrontera</a>(0) == <a class="code" href="Problema_8hpp.html#a7cd94446e32cbe1158bcce43fa798ed6">DIRICHLET</a>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#a6cf70c40e1ceafd8b53a2f67c33bab1b">retornaAlcanceFrontera</a>(0) == 0) ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,0),0,-1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         <span class="keywordflow">else</span> ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,0),0,-1,1,<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,1),<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,1));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="comment">// Frontera 2 X = X1</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#afed4f69b2d4d61ba19ee03a58f920f44">tipoCondicionFrontera</a>(1) == <a class="code" href="Problema_8hpp.html#a7cd94446e32cbe1158bcce43fa798ed6">DIRICHLET</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#a6cf70c40e1ceafd8b53a2f67c33bab1b">retornaAlcanceFrontera</a>(1) == 0) ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,0),0,-1);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;         <span class="keywordflow">else</span> ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,0),0,-1,1,<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,1),<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,1));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="comment">// Frontera 3 Y = Y0</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#afed4f69b2d4d61ba19ee03a58f920f44">tipoCondicionFrontera</a>(2) == <a class="code" href="Problema_8hpp.html#a7cd94446e32cbe1158bcce43fa798ed6">DIRICHLET</a>)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#a6cf70c40e1ceafd8b53a2f67c33bab1b">retornaAlcanceFrontera</a>(2) == 0) ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,1),1,-1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         <span class="keywordflow">else</span> ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,1),1,-1,0,<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,0),<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,0));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="comment">// Frontera 4 Y = Y1</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#afed4f69b2d4d61ba19ee03a58f920f44">tipoCondicionFrontera</a>(3) == <a class="code" href="Problema_8hpp.html#a7cd94446e32cbe1158bcce43fa798ed6">DIRICHLET</a>)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;         <span class="keywordflow">if</span> (<a class="code" href="classProblema.html#a6cf70c40e1ceafd8b53a2f67c33bab1b">retornaAlcanceFrontera</a>(3) == 0) ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,1),1,-1);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;         <span class="keywordflow">else</span> ge-&gt;<a class="code" href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">marcaNodosSatisfagan</a>(<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,1),1,-1,0,<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(0,0),<a class="code" href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Dominio</a>.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(1,0));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="comment">// Numera los nodos</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      ge-&gt;<a class="code" href="classGeometria.html#aaa5e3fd6155ffc9bdf1ff329719a6ade">numeraNodos</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classProblema__2D.html#a14c37c2b0102fa4e272c34bb2c54c8e8">  108</a></span>&#160;   <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classProblema__2D.html#a14c37c2b0102fa4e272c34bb2c54c8e8">l_n</a>(<span class="keywordtype">int</span> <a class="code" href="classProblema.html#ab21f7b342e31684ab7e05e8981c152e5">f</a>, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> e, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> n)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordflow">return</span> ln.<a class="code" href="classLineales.html#aa760aa754bcd10ecabe6c8cfaaeeb1f2">l_n</a>(f,e,n);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classProblema__2D.html#a7a7943e997e41964c99c80d041f73d1b">  116</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classProblema__2D.html#a7a7943e997e41964c99c80d041f73d1b">asignarValorNodo</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> *x, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> *y)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;   {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      ln.<a class="code" href="classLineales.html#a2b19b90ca1ea25872453c30c3300e34f">asignarValorNodo</a>(x, y);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classProblema__2D.html#a532d03a67faa6476f3c7207260b3dcfd">  123</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classProblema__2D.html#a532d03a67faa6476f3c7207260b3dcfd">asignarValorJacobiano</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> j)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;   {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      ln.<a class="code" href="classLineales.html#ab6af9c6e6b1a8dfe8fa7af0c9448eeac">asignarValorJacobiano</a>(j);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;   }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classProblema_html_a842ba11a92e70021851e1c0e4beb94af"><div class="ttname"><a href="classProblema.html#a842ba11a92e70021851e1c0e4beb94af">Problema::Dominio</a></div><div class="ttdeci">MatrizDensa Dominio</div><div class="ttdoc">Dominio del problema. </div><div class="ttdef"><b>Definition:</b> Problema.hpp:64</div></div>
+<div class="ttc" id="classProblema__2D_html_a14c37c2b0102fa4e272c34bb2c54c8e8"><div class="ttname"><a href="classProblema__2D.html#a14c37c2b0102fa4e272c34bb2c54c8e8">Problema_2D::l_n</a></div><div class="ttdeci">ldouble l_n(int f, ldouble e, ldouble n)</div><div class="ttdoc">Interpoladores lineales. </div><div class="ttdef"><b>Definition:</b> Problema_2D.hpp:108</div></div>
+<div class="ttc" id="classProblema__2D_html_a6d1e5c783eee68af3dfed2251821dab9"><div class="ttname"><a href="classProblema__2D.html#a6d1e5c783eee68af3dfed2251821dab9">Problema_2D::inicializa</a></div><div class="ttdeci">void inicializa(Geometria_2D *ge, int partx, int party)</div><div class="ttdoc">Inicializa la geometria. </div><div class="ttdef"><b>Definition:</b> Problema_2D.hpp:66</div></div>
+<div class="ttc" id="classProblema__2D_html_a532d03a67faa6476f3c7207260b3dcfd"><div class="ttname"><a href="classProblema__2D.html#a532d03a67faa6476f3c7207260b3dcfd">Problema_2D::asignarValorJacobiano</a></div><div class="ttdeci">void asignarValorJacobiano(ldouble j)</div><div class="ttdoc">Asigna valor al Jacobiano. </div><div class="ttdef"><b>Definition:</b> Problema_2D.hpp:123</div></div>
+<div class="ttc" id="classProblema__2D_html_a7a7943e997e41964c99c80d041f73d1b"><div class="ttname"><a href="classProblema__2D.html#a7a7943e997e41964c99c80d041f73d1b">Problema_2D::asignarValorNodo</a></div><div class="ttdeci">void asignarValorNodo(ldouble *x, ldouble *y)</div><div class="ttdoc">Asigna valores de los nodos. </div><div class="ttdef"><b>Definition:</b> Problema_2D.hpp:116</div></div>
+<div class="ttc" id="classProblema__2D_html_a37cc116ab4ffca21523c664830ae4953"><div class="ttname"><a href="classProblema__2D.html#a37cc116ab4ffca21523c664830ae4953">Problema_2D::Problema_2D</a></div><div class="ttdeci">Problema_2D(void)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> Problema_2D.hpp:55</div></div>
+<div class="ttc" id="classProblema_html_afed4f69b2d4d61ba19ee03a58f920f44"><div class="ttname"><a href="classProblema.html#afed4f69b2d4d61ba19ee03a58f920f44">Problema::tipoCondicionFrontera</a></div><div class="ttdeci">int tipoCondicionFrontera(int fr)</div><div class="ttdoc">Valor en la frontera X = X0. </div><div class="ttdef"><b>Definition:</b> Problema.hpp:128</div></div>
+<div class="ttc" id="Definiciones_8hpp_html_a8b7a76744fa99ba43b09c8fd0b715cc3"><div class="ttname"><a href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a></div><div class="ttdeci">double ldouble</div><div class="ttdoc">Define ldouble como double. </div><div class="ttdef"><b>Definition:</b> Definiciones.hpp:50</div></div>
+<div class="ttc" id="classLineales_html_ab6af9c6e6b1a8dfe8fa7af0c9448eeac"><div class="ttname"><a href="classLineales.html#ab6af9c6e6b1a8dfe8fa7af0c9448eeac">Lineales::asignarValorJacobiano</a></div><div class="ttdeci">void asignarValorJacobiano(ldouble j)</div><div class="ttdoc">Asigna valores de los nodos. </div><div class="ttdef"><b>Definition:</b> Lineales.hpp:77</div></div>
+<div class="ttc" id="classProblema_html_a72be3a653336b70c36d8d9a7d75d0a98"><div class="ttname"><a href="classProblema.html#a72be3a653336b70c36d8d9a7d75d0a98">Problema::Alcance_frontera</a></div><div class="ttdeci">VectorInt Alcance_frontera</div><div class="ttdoc">Alcance de frontera. </div><div class="ttdef"><b>Definition:</b> Problema.hpp:68</div></div>
+<div class="ttc" id="classGeometria_html_aaa5e3fd6155ffc9bdf1ff329719a6ade"><div class="ttname"><a href="classGeometria.html#aaa5e3fd6155ffc9bdf1ff329719a6ade">Geometria::numeraNodos</a></div><div class="ttdeci">void numeraNodos(void)</div><div class="ttdoc">Numera nodos, (< 0) conocido, (>=0) desconocido. </div><div class="ttdef"><b>Definition:</b> Geometria.cpp:117</div></div>
+<div class="ttc" id="Lineales_8hpp_html"><div class="ttname"><a href="Lineales_8hpp.html">Lineales.hpp</a></div></div>
+<div class="ttc" id="classProblema_html_a6cf70c40e1ceafd8b53a2f67c33bab1b"><div class="ttname"><a href="classProblema.html#a6cf70c40e1ceafd8b53a2f67c33bab1b">Problema::retornaAlcanceFrontera</a></div><div class="ttdeci">int retornaAlcanceFrontera(int fr)</div><div class="ttdoc">Alcance de la frontera. </div><div class="ttdef"><b>Definition:</b> Problema.hpp:136</div></div>
+<div class="ttc" id="Problema_8hpp_html_a7cd94446e32cbe1158bcce43fa798ed6"><div class="ttname"><a href="Problema_8hpp.html#a7cd94446e32cbe1158bcce43fa798ed6">DIRICHLET</a></div><div class="ttdeci">#define DIRICHLET</div><div class="ttdef"><b>Definition:</b> Problema.hpp:35</div></div>
+<div class="ttc" id="Geometria__2D_8hpp_html"><div class="ttname"><a href="Geometria__2D_8hpp.html">Geometria_2D.hpp</a></div></div>
+<div class="ttc" id="classProblema_html_ab21f7b342e31684ab7e05e8981c152e5"><div class="ttname"><a href="classProblema.html#ab21f7b342e31684ab7e05e8981c152e5">Problema::f</a></div><div class="ttdeci">virtual ldouble f(ldouble *x, int di)=0</div><div class="ttdoc">Discretizacion de la ecuacion. </div></div>
+<div class="ttc" id="classMatrizDensa_html_afad0da936f6f9ddd9dea87f605590731"><div class="ttname"><a href="classMatrizDensa.html#afad0da936f6f9ddd9dea87f605590731">MatrizDensa::redimensiona</a></div><div class="ttdeci">void redimensiona(int nren, int ncol)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:118</div></div>
+<div class="ttc" id="classGeometria__2D_html_aa9c7f75c0326c1d35e5d41ff0268d0a1"><div class="ttname"><a href="classGeometria__2D.html#aa9c7f75c0326c1d35e5d41ff0268d0a1">Geometria_2D::inicializa</a></div><div class="ttdeci">virtual void inicializa(MatrizDensa *dm, int partx, int party)=0</div><div class="ttdoc">Inicializa la geometria. </div></div>
+<div class="ttc" id="classProblema_html_af5d2faafdbe43b73387ed8b9467a62da"><div class="ttname"><a href="classProblema.html#af5d2faafdbe43b73387ed8b9467a62da">Problema::TipoFrontera</a></div><div class="ttdeci">VectorInt TipoFrontera</div><div class="ttdoc">Tipo de frontera. </div><div class="ttdef"><b>Definition:</b> Problema.hpp:66</div></div>
+<div class="ttc" id="classLineales_html_a2b19b90ca1ea25872453c30c3300e34f"><div class="ttname"><a href="classLineales.html#a2b19b90ca1ea25872453c30c3300e34f">Lineales::asignarValorNodo</a></div><div class="ttdeci">void asignarValorNodo(ldouble x[], ldouble y[])</div><div class="ttdoc">Asigna valores de los nodos. </div><div class="ttdef"><b>Definition:</b> Lineales.hpp:63</div></div>
+<div class="ttc" id="classProblema__2D_html"><div class="ttname"><a href="classProblema__2D.html">Problema_2D</a></div><div class="ttdoc">Clase base para definir un problema en dos dimensiones. </div><div class="ttdef"><b>Definition:</b> Problema_2D.hpp:44</div></div>
+<div class="ttc" id="Problema_8hpp_html"><div class="ttname"><a href="Problema_8hpp.html">Problema.hpp</a></div></div>
+<div class="ttc" id="classGeometria__2D_html"><div class="ttname"><a href="classGeometria__2D.html">Geometria_2D</a></div><div class="ttdoc">Clase base para generar una geometria en 2D. </div><div class="ttdef"><b>Definition:</b> Geometria_2D.hpp:45</div></div>
+<div class="ttc" id="classVectorInt_html_a8beb066cc89cf71f03ceb61e0f32fac7"><div class="ttname"><a href="classVectorInt.html#a8beb066cc89cf71f03ceb61e0f32fac7">VectorInt::redimensiona</a></div><div class="ttdeci">void redimensiona(int ncol)</div><div class="ttdoc">Redimensiona el tamaño del vector. </div><div class="ttdef"><b>Definition:</b> VectorInt.hpp:140</div></div>
+<div class="ttc" id="classProblema__2D_html_aea77ac87a8c12ff3778ef8b27f0cdb1c"><div class="ttname"><a href="classProblema__2D.html#aea77ac87a8c12ff3778ef8b27f0cdb1c">Problema_2D::ln</a></div><div class="ttdeci">Lineales ln</div><div class="ttdoc">Interpoladores Lineales. </div><div class="ttdef"><b>Definition:</b> Problema_2D.hpp:49</div></div>
+<div class="ttc" id="classMatrizDensa_html_ae5c927db7928a0e36a1da9d91952af25"><div class="ttname"><a href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">MatrizDensa::retorna</a></div><div class="ttdeci">ldouble retorna(const int ren, const int col)</div><div class="ttdoc">Retorna el valor del renglon y columna solicitado. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.cpp:111</div></div>
+<div class="ttc" id="classProblema_html"><div class="ttname"><a href="classProblema.html">Problema</a></div><div class="ttdoc">Clase base para definir un problema. </div><div class="ttdef"><b>Definition:</b> Problema.hpp:58</div></div>
+<div class="ttc" id="classLineales_html"><div class="ttname"><a href="classLineales.html">Lineales</a></div><div class="ttdoc">Clase para definir a los interpoladores lineales para el problema en dos dimensiones. </div><div class="ttdef"><b>Definition:</b> Lineales.hpp:47</div></div>
+<div class="ttc" id="classLineales_html_aa760aa754bcd10ecabe6c8cfaaeeb1f2"><div class="ttname"><a href="classLineales.html#aa760aa754bcd10ecabe6c8cfaaeeb1f2">Lineales::l_n</a></div><div class="ttdeci">ldouble l_n(int f, ldouble E, ldouble N)</div><div class="ttdoc">Interpoladores lineales. </div><div class="ttdef"><b>Definition:</b> Lineales.hpp:84</div></div>
+<div class="ttc" id="classGeometria_html_ac6cd8d2540b212befe4af086efaf7c72"><div class="ttname"><a href="classGeometria.html#ac6cd8d2540b212befe4af086efaf7c72">Geometria::marcaNodosSatisfagan</a></div><div class="ttdeci">void marcaNodosSatisfagan(ldouble val, int ind, int mc)</div><div class="ttdoc">Marca con el valor MC a los nodos que satisfacen la condicion de tener el valor VAL en la componente ...</div><div class="ttdef"><b>Definition:</b> Geometria.cpp:211</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el SÃ¡bado, 20 de Febrero de 2016 09:01:24 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
+<area shape="rect" id="node1" href="$classGeometria.html" title="Clase base para generar una geometria. " alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node2" href="$classGeometria__2D.html" title="Clase base para generar una geometria en 2D. " alt="" coords="144,5,259,32"/>
+<area shape="rect" id="node3" href="$classGeometria__2DRectangulos.html" title="Clase para generar una geometr�a homog�nea en dos dimensiones usando rect�ngulos. " alt="" coords="307,5,499,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
+<area shape="rect" id="node1" href="$classCadenas.html" title="Clase para manipulaci�n de cadenas. " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node2" href="$classSeparaCadenas.html" title="Clase para separar subcadenas dentro de una cadena. " alt="" coords="132,5,256,32"/>
+<area shape="rect" id="node3" href="$classManipulador__archivos.html" title="Clase manipuladora del manipulador de archivos. " alt="" coords="304,5,464,32"/>
+</map>

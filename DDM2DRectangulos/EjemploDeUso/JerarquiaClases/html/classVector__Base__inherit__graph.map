@@ -1,0 +1,5 @@
+<map id="Vector_Base" name="Vector_Base">
+<area shape="rect" id="node2" href="$classVector.html" title="Clase para el trabajar con vectores de punto flotante. " alt="" coords="5,80,68,107"/>
+<area shape="rect" id="node3" href="$classVectorExtendido.html" title="Clase para el trabajar con vectores de punto foltante que extiende a un vector existente. " alt="" coords="92,80,219,107"/>
+<area shape="rect" id="node4" href="$classVectorInt.html" title="Clase para el trabajar con vectores con valores enteros. " alt="" coords="243,80,321,107"/>
+</map>

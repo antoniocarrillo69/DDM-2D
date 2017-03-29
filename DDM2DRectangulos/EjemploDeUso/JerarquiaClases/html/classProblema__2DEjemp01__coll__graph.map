@@ -1,0 +1,10 @@
+<map id="Problema_2DEjemp01" name="Problema_2DEjemp01">
+<area shape="rect" id="node2" href="$classProblema__2D.html" title="Clase base para definir un problema en dos dimensiones. " alt="" coords="129,351,237,377"/>
+<area shape="rect" id="node3" href="$classProblema.html" title="Clase base para definir un problema. " alt="" coords="66,261,149,288"/>
+<area shape="rect" id="node4" href="$classMatrizDensa.html" title="Clase para el trabajar con matrices densas de punto flotante. " alt="" coords="5,157,108,184"/>
+<area shape="rect" id="node5" href="$classMatriz.html" title="Clase base para el trabajar con matrices de punto flotante. " alt="" coords="26,81,87,108"/>
+<area shape="rect" id="node6" href="$classMatriz__Base.html" title="Clase base para el trabajar con matrices. " alt="" coords="7,5,107,32"/>
+<area shape="rect" id="node7" href="$classVectorInt.html" title="Clase para el trabajar con vectores con valores enteros. " alt="" coords="132,157,211,184"/>
+<area shape="rect" id="node8" href="$classVector__Base.html" title="Clase base para el trabajar con vectores. " alt="" coords="120,81,223,108"/>
+<area shape="rect" id="node9" href="$classLineales.html" title="Clase para definir a los interpoladores lineales para el problema en dos dimensiones. " alt="" coords="173,261,247,288"/>
+</map>

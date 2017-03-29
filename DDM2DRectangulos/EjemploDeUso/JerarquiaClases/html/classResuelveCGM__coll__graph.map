@@ -1,0 +1,10 @@
+<map id="ResuelveCGM" name="ResuelveCGM">
+<area shape="rect" id="node2" href="$classBCGM.html" title="Clase para resolución del sistema lineal mediante CGM. " alt="" coords="193,275,254,301"/>
+<area shape="rect" id="node3" href="$classResuelveSistemaLineal.html" title="Clase para resolución del sistema lineal. " alt="" coords="165,185,333,212"/>
+<area shape="rect" id="node4" href="$classMatriz.html" title="Clase base para el trabajar con matrices de punto flotante. " alt="" coords="25,81,86,108"/>
+<area shape="rect" id="node5" href="$classMatriz__Base.html" title="Clase base para el trabajar con matrices. " alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node6" href="$classVector.html" title="Clase para el trabajar con vectores de punto flotante. " alt="" coords="217,81,280,108"/>
+<area shape="rect" id="node7" href="$classVector__Base.html" title="Clase base para el trabajar con vectores. " alt="" coords="197,5,300,32"/>
+<area shape="rect" id="node8" href="$classProductoPunto.html" title="Clase para implementar el producto punto. " alt="" coords="24,185,140,212"/>
+<area shape="rect" id="node9" href="$classMultOp.html" title="Clase para implementar la multiplicación de la matriz por el vector. " alt="" coords="357,185,423,212"/>
+</map>

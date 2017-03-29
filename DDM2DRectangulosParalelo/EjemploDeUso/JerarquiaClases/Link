@@ -1,0 +1,4 @@
+# Link a los fuentes
+ln -s ../*.?pp .
+
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fichero Fuente Geometria_2DRectangulos.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>PÃ¡ginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="examples.html"><span>Ejemplos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Geometria_2DRectangulos.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Geometria__2DRectangulos_8hpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Clase para generar una geometría homogénea en dos dimensiones usando rectángulos         //</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Análisis y Diseño y Programación:                                                        //</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Nombre:   Antonio Carrillo Ledesma                                                       //</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// E-mail:   acl@www.mmc.igeofcu.unam.mx                                                    //</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Página:   http://www.mmc.igeofcu.unam.mx/acl                                             //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Este programa es software libre. Puede redistribuirlo y/o modificarlo                    //</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// bajo los términos de la Licencia Pública General de GNU según es                         //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// publicada por la Free Software Foundation, bien de la versión 2 de                       //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// dicha Licencia o bien (según su elección) de cualquier versión                           //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// posterior.                                                                               //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Este programa se distribuye con la esperanza de que sea útil, pero SIN                   //</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin                      //</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la                        //</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Licencia Pública General de GNU para más detalles.                                       //</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Debería haber recibido una copia de la Licencia Pública General junto                    //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// con este programa. Si no ha sido así, escriba a la Free Software                         //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Foundation, Inc., en 675 Mass Ave, Cambridge, MA 02139, EEUU.                            //</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef __Geometria_2DRectangulos__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define __Geometria_2DRectangulos__</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="Geometria__2DRectangulos_8hpp.html#a8b6fb788e905896a499bcbf9f489a224">   34</a></span>&#160;<span class="preprocessor">#define NUMERO_NODOS_ELEMENTO 4</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Geometria__2D_8hpp.html">Geometria_2D.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGeometria__2DRectangulos.html">Geometria_2DRectangulos</a> : <span class="keyword">public</span> <a class="code" href="classGeometria__2D.html">Geometria_2D</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html#a18b2824f3b974f2f473def637d8f580d">   59</a></span>&#160;   <a class="code" href="classGeometria__2DRectangulos.html#a18b2824f3b974f2f473def637d8f580d">Geometria_2DRectangulos</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> x1, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> y1, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> x2, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> y2, <span class="keywordtype">int</span> part_hor, <span class="keywordtype">int</span> part_ver) : <a class="code" href="classGeometria__2D.html">Geometria_2D</a>()</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <a class="code" href="classGeometria__2DRectangulos.html#a1c2f267dd8edaf7111ccc26edba47b97">inicializa</a>(x1,y1,x2,y2,part_hor,part_ver);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html#a6426aa29b4d6f33290574efd0479ac6c">   69</a></span>&#160;   <a class="code" href="classGeometria__2DRectangulos.html#a6426aa29b4d6f33290574efd0479ac6c">Geometria_2DRectangulos</a>(<a class="code" href="classMatrizDensa.html">MatrizDensa</a> *dm, <span class="keywordtype">int</span> part_hor, <span class="keywordtype">int</span> part_ver) : <a class="code" href="classGeometria__2D.html">Geometria_2D</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="classGeometria__2DRectangulos.html#a1c2f267dd8edaf7111ccc26edba47b97">inicializa</a>(dm,part_hor,part_ver);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html#aa14b22ae514205dce5d5a443987278f8">   76</a></span>&#160;   <a class="code" href="classGeometria__2DRectangulos.html#aa14b22ae514205dce5d5a443987278f8">Geometria_2DRectangulos</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *arch) : <a class="code" href="classGeometria__2D.html">Geometria_2D</a>()</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;   {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="comment">// Dimension 1D</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <a class="code" href="classGeometria.html#a1f583fbdc4ffeaec893430d6dfbadc77">DIM</a> = 2;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="comment">// Numero de nodos por elemento</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <a class="code" href="classGeometria.html#acdafb0ad43c5bd13aa12388621a2c687">NNE</a> = 4;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="comment">// Numero máximo de elementos que son soporte de un nodo</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <a class="code" href="classGeometria.html#a41b4ab9c38c9f17a7a65352bcae95d6b">NMESN</a> = 4;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="classGeometria.html#ab3ede0bcaebb2f9bf8f0d6883e35a94f">leeGeometria</a>(arch);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html#a023d690dd7eb188be2f112a2af1e622e">   89</a></span>&#160;   <a class="code" href="classGeometria__2DRectangulos.html#a023d690dd7eb188be2f112a2af1e622e">Geometria_2DRectangulos</a>(<span class="keywordtype">void</span>) : <a class="code" href="classGeometria__2D.html">Geometria_2D</a>()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="comment">// Dimension 1D</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <a class="code" href="classGeometria.html#a1f583fbdc4ffeaec893430d6dfbadc77">DIM</a> = 2;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="comment">// Numero de nodos por elemento</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <a class="code" href="classGeometria.html#acdafb0ad43c5bd13aa12388621a2c687">NNE</a> = 4;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="comment">// Numero máximo de elementos que son soporte de un nodo</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <a class="code" href="classGeometria.html#a41b4ab9c38c9f17a7a65352bcae95d6b">NMESN</a> = 4;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html#a1c2f267dd8edaf7111ccc26edba47b97">  106</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classGeometria__2DRectangulos.html#a1c2f267dd8edaf7111ccc26edba47b97">inicializa</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> x1, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> y1, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> x2, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> y2, <span class="keywordtype">int</span> part_hor, <span class="keywordtype">int</span> part_ver)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="comment">// Dimension 2</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <a class="code" href="classGeometria.html#a1f583fbdc4ffeaec893430d6dfbadc77">DIM</a> = 2;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="comment">// Numero de nodos por elemento</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <a class="code" href="classGeometria.html#acdafb0ad43c5bd13aa12388621a2c687">NNE</a> = 4;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="comment">// Numero máximo de elementos que son soporte de un nodo</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <a class="code" href="classGeometria.html#a41b4ab9c38c9f17a7a65352bcae95d6b">NMESN</a> = 4;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="comment">// Numero de rectangulos</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <a class="code" href="classGeometria.html#a6caa1abacb62b4b54c9e5cf8f2511e48">N_E</a> = part_hor * part_ver;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="comment">// Numero de nodos</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="classGeometria.html#a7d0e9483a45427d82a2647ac7672bef6">N_N</a> = (part_hor + 1) * (part_ver +1);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="comment">// Almacena valores</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <a class="code" href="classGeometria.html#a30e01e755e0b8e334738085b713c1c48">Dominio</a>.<a class="code" href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">asigna</a>(0,0,x1);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="classGeometria.html#a30e01e755e0b8e334738085b713c1c48">Dominio</a>.<a class="code" href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">asigna</a>(0,1,y1);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <a class="code" href="classGeometria.html#a30e01e755e0b8e334738085b713c1c48">Dominio</a>.<a class="code" href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">asigna</a>(1,0,x2);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <a class="code" href="classGeometria.html#a30e01e755e0b8e334738085b713c1c48">Dominio</a>.<a class="code" href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">asigna</a>(1,1,y2);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <a class="code" href="classGeometria.html#a24bef8fceaa12fa23d425297ad5903cb">Particion</a>.<a class="code" href="classVectorInt.html#a2a0786288f76c32a45c259e688170fd1">asigna</a>(0,part_hor);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <a class="code" href="classGeometria.html#a24bef8fceaa12fa23d425297ad5903cb">Particion</a>.<a class="code" href="classVectorInt.html#a2a0786288f76c32a45c259e688170fd1">asigna</a>(1,part_ver);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <a class="code" href="classGeometria__2DRectangulos.html#a362a19929e4b63f5d8e3b9f826b44916">generaGeometria</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;   }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html#a7b9a6edbe545a83db4977e7d12890f18">  134</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classGeometria__2DRectangulos.html#a7b9a6edbe545a83db4977e7d12890f18">inicializa</a>(<a class="code" href="classMatrizDensa.html">MatrizDensa</a> *dm, <span class="keywordtype">int</span> part_hor, <span class="keywordtype">int</span> part_ver)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;   {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      <span class="comment">// Dimension 2</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <a class="code" href="classGeometria.html#a1f583fbdc4ffeaec893430d6dfbadc77">DIM</a> = 2;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="comment">// Numero de nodos por elemento</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <a class="code" href="classGeometria.html#acdafb0ad43c5bd13aa12388621a2c687">NNE</a> = 4;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <span class="comment">// Numero máximo de elementos que son soporte de un nodo</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <a class="code" href="classGeometria.html#a41b4ab9c38c9f17a7a65352bcae95d6b">NMESN</a> = 4;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="comment">// Numero de rectangulos</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <a class="code" href="classGeometria.html#a6caa1abacb62b4b54c9e5cf8f2511e48">N_E</a> = part_hor * part_ver;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      <span class="comment">// Numero de nodos</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <a class="code" href="classGeometria.html#a7d0e9483a45427d82a2647ac7672bef6">N_N</a> = (part_hor + 1) * (part_ver +1);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="comment">// Almacena valores</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      dm-&gt;<a class="code" href="classMatriz.html#a03d02833fd66884fad495264948fceb0">copia</a>(&amp;<a class="code" href="classGeometria.html#a30e01e755e0b8e334738085b713c1c48">Dominio</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <a class="code" href="classGeometria.html#a24bef8fceaa12fa23d425297ad5903cb">Particion</a>.<a class="code" href="classVectorInt.html#a2a0786288f76c32a45c259e688170fd1">asigna</a>(0,part_hor);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <a class="code" href="classGeometria.html#a24bef8fceaa12fa23d425297ad5903cb">Particion</a>.<a class="code" href="classVectorInt.html#a2a0786288f76c32a45c259e688170fd1">asigna</a>(1,part_ver);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="classGeometria__2DRectangulos.html#a362a19929e4b63f5d8e3b9f826b44916">generaGeometria</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;   }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classGeometria__2DRectangulos.html#a362a19929e4b63f5d8e3b9f826b44916">generaGeometria</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classGeometria__2DRectangulos.html#a0cda53b2869b613501f9b8e44df92eb4">  160</a></span>&#160;   <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classGeometria__2DRectangulos.html#a0cda53b2869b613501f9b8e44df92eb4">areaElemento</a>(<span class="keywordtype">int</span> el)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;   {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;   }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;};</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">//~ /// Retorna el numero de nodo del elemento</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">//~ inline void Retorna_Numero_Nodo(int elemento, int &amp;nd1, int &amp;nd2, int &amp;nd3, int &amp;nd4)</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">//~ {</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">//~ nd1 = EL-&gt;Retorna(elemento,0);</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">//~ nd2 = EL-&gt;Retorna(elemento,1);</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">//~ nd3 = EL-&gt;Retorna(elemento,2);</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//~ nd4 = EL-&gt;Retorna(elemento,3);</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">//~ }</span></div>
+<div class="ttc" id="classGeometria_html_acdafb0ad43c5bd13aa12388621a2c687"><div class="ttname"><a href="classGeometria.html#acdafb0ad43c5bd13aa12388621a2c687">Geometria::NNE</a></div><div class="ttdeci">int NNE</div><div class="ttdoc">Numero de nodos por elemento. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:94</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html"><div class="ttname"><a href="classGeometria__2DRectangulos.html">Geometria_2DRectangulos</a></div><div class="ttdoc">Clase para generar una geometría homogénea en dos dimensiones usando rectángulos. </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:47</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_a18b2824f3b974f2f473def637d8f580d"><div class="ttname"><a href="classGeometria__2DRectangulos.html#a18b2824f3b974f2f473def637d8f580d">Geometria_2DRectangulos::Geometria_2DRectangulos</a></div><div class="ttdeci">Geometria_2DRectangulos(ldouble x1, ldouble y1, ldouble x2, ldouble y2, int part_hor, int part_ver)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:59</div></div>
+<div class="ttc" id="classGeometria_html_a30e01e755e0b8e334738085b713c1c48"><div class="ttname"><a href="classGeometria.html#a30e01e755e0b8e334738085b713c1c48">Geometria::Dominio</a></div><div class="ttdeci">MatrizDensa Dominio</div><div class="ttdoc">Dominio de la geometria. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:65</div></div>
+<div class="ttc" id="classGeometria_html_a41b4ab9c38c9f17a7a65352bcae95d6b"><div class="ttname"><a href="classGeometria.html#a41b4ab9c38c9f17a7a65352bcae95d6b">Geometria::NMESN</a></div><div class="ttdeci">int NMESN</div><div class="ttdoc">Numero máximo de elementos que son soporte de un nodo. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:97</div></div>
+<div class="ttc" id="Definiciones_8hpp_html_a8b7a76744fa99ba43b09c8fd0b715cc3"><div class="ttname"><a href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a></div><div class="ttdeci">double ldouble</div><div class="ttdoc">Define ldouble como double. </div><div class="ttdef"><b>Definition:</b> Definiciones.hpp:50</div></div>
+<div class="ttc" id="classGeometria_html_a1f583fbdc4ffeaec893430d6dfbadc77"><div class="ttname"><a href="classGeometria.html#a1f583fbdc4ffeaec893430d6dfbadc77">Geometria::DIM</a></div><div class="ttdeci">int DIM</div><div class="ttdoc">Dimension a trabajar. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:91</div></div>
+<div class="ttc" id="classMatriz_html_a03d02833fd66884fad495264948fceb0"><div class="ttname"><a href="classMatriz.html#a03d02833fd66884fad495264948fceb0">Matriz::copia</a></div><div class="ttdeci">virtual void copia(Matriz *a)</div><div class="ttdoc">Copia el contenido de la matriz a la matriz pasada como parámetro. </div><div class="ttdef"><b>Definition:</b> Matriz.cpp:371</div></div>
+<div class="ttc" id="classMatrizDensa_html"><div class="ttname"><a href="classMatrizDensa.html">MatrizDensa</a></div><div class="ttdoc">Clase para el trabajar con matrices densas de punto flotante. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:44</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_aa14b22ae514205dce5d5a443987278f8"><div class="ttname"><a href="classGeometria__2DRectangulos.html#aa14b22ae514205dce5d5a443987278f8">Geometria_2DRectangulos::Geometria_2DRectangulos</a></div><div class="ttdeci">Geometria_2DRectangulos(const char *arch)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:76</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_a0cda53b2869b613501f9b8e44df92eb4"><div class="ttname"><a href="classGeometria__2DRectangulos.html#a0cda53b2869b613501f9b8e44df92eb4">Geometria_2DRectangulos::areaElemento</a></div><div class="ttdeci">ldouble areaElemento(int el)</div><div class="ttdoc">Regresa el valor del área del elemento. </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:160</div></div>
+<div class="ttc" id="Geometria__2D_8hpp_html"><div class="ttname"><a href="Geometria__2D_8hpp.html">Geometria_2D.hpp</a></div></div>
+<div class="ttc" id="classVectorInt_html_a2a0786288f76c32a45c259e688170fd1"><div class="ttname"><a href="classVectorInt.html#a2a0786288f76c32a45c259e688170fd1">VectorInt::asigna</a></div><div class="ttdeci">void asigna(const int col, const int val)</div><div class="ttdoc">Asigna el valor val a la columna col. </div><div class="ttdef"><b>Definition:</b> VectorInt.hpp:171</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_a7b9a6edbe545a83db4977e7d12890f18"><div class="ttname"><a href="classGeometria__2DRectangulos.html#a7b9a6edbe545a83db4977e7d12890f18">Geometria_2DRectangulos::inicializa</a></div><div class="ttdeci">void inicializa(MatrizDensa *dm, int part_hor, int part_ver)</div><div class="ttdoc">Inicializa los datos de la geometría </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:134</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_a023d690dd7eb188be2f112a2af1e622e"><div class="ttname"><a href="classGeometria__2DRectangulos.html#a023d690dd7eb188be2f112a2af1e622e">Geometria_2DRectangulos::Geometria_2DRectangulos</a></div><div class="ttdeci">Geometria_2DRectangulos(void)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:89</div></div>
+<div class="ttc" id="classMatrizDensa_html_ad51039934b942d2b373843ee54c43c4d"><div class="ttname"><a href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">MatrizDensa::asigna</a></div><div class="ttdeci">void asigna(const int ren, const int col, const ldouble val)</div><div class="ttdoc">Asigna el valor indicado en el renglo y columna solicitado. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.cpp:95</div></div>
+<div class="ttc" id="classGeometria__2D_html"><div class="ttname"><a href="classGeometria__2D.html">Geometria_2D</a></div><div class="ttdoc">Clase base para generar una geometria en 2D. </div><div class="ttdef"><b>Definition:</b> Geometria_2D.hpp:45</div></div>
+<div class="ttc" id="classGeometria_html_a7d0e9483a45427d82a2647ac7672bef6"><div class="ttname"><a href="classGeometria.html#a7d0e9483a45427d82a2647ac7672bef6">Geometria::N_N</a></div><div class="ttdeci">int N_N</div><div class="ttdoc">Numero de nodos. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:85</div></div>
+<div class="ttc" id="classGeometria_html_ab3ede0bcaebb2f9bf8f0d6883e35a94f"><div class="ttname"><a href="classGeometria.html#ab3ede0bcaebb2f9bf8f0d6883e35a94f">Geometria::leeGeometria</a></div><div class="ttdeci">void leeGeometria(const char *arch)</div><div class="ttdoc">Lee la geometria a un archivo. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:386</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_a1c2f267dd8edaf7111ccc26edba47b97"><div class="ttname"><a href="classGeometria__2DRectangulos.html#a1c2f267dd8edaf7111ccc26edba47b97">Geometria_2DRectangulos::inicializa</a></div><div class="ttdeci">void inicializa(ldouble x1, ldouble y1, ldouble x2, ldouble y2, int part_hor, int part_ver)</div><div class="ttdoc">Inicializa los datos de la geometría </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:106</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_a362a19929e4b63f5d8e3b9f826b44916"><div class="ttname"><a href="classGeometria__2DRectangulos.html#a362a19929e4b63f5d8e3b9f826b44916">Geometria_2DRectangulos::generaGeometria</a></div><div class="ttdeci">void generaGeometria(void)</div><div class="ttdoc">Genera la geometria. </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.cpp:36</div></div>
+<div class="ttc" id="classGeometria__2DRectangulos_html_a6426aa29b4d6f33290574efd0479ac6c"><div class="ttname"><a href="classGeometria__2DRectangulos.html#a6426aa29b4d6f33290574efd0479ac6c">Geometria_2DRectangulos::Geometria_2DRectangulos</a></div><div class="ttdeci">Geometria_2DRectangulos(MatrizDensa *dm, int part_hor, int part_ver)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> Geometria_2DRectangulos.hpp:69</div></div>
+<div class="ttc" id="classGeometria_html_a24bef8fceaa12fa23d425297ad5903cb"><div class="ttname"><a href="classGeometria.html#a24bef8fceaa12fa23d425297ad5903cb">Geometria::Particion</a></div><div class="ttdeci">VectorInt Particion</div><div class="ttdoc">Particion del dominio. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:68</div></div>
+<div class="ttc" id="classGeometria_html_a6caa1abacb62b4b54c9e5cf8f2511e48"><div class="ttname"><a href="classGeometria.html#a6caa1abacb62b4b54c9e5cf8f2511e48">Geometria::N_E</a></div><div class="ttdeci">int N_E</div><div class="ttdoc">Numero de elementos. </div><div class="ttdef"><b>Definition:</b> Geometria.hpp:88</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el SÃ¡bado, 20 de Febrero de 2016 09:01:24 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

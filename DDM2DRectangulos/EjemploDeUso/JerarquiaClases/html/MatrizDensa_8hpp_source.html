@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fichero Fuente MatrizDensa.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>PÃ¡ginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="examples.html"><span>Ejemplos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MatrizDensa.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="MatrizDensa_8hpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Clase para el trabajar con matrices densas de punto flotante                             //</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Análisis y Diseño y Programación:                                                        //</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Nombre:   Antonio Carrillo Ledesma                                                       //</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// E-mail:   acl@www.mmc.igeofcu.unam.mx                                                    //</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Página:   http://www.mmc.igeofcu.unam.mx/acl                                             //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Este programa es software libre. Puede redistribuirlo y/o modificarlo                    //</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// bajo los términos de la Licencia Pública General de GNU según es                         //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// publicada por la Free Software Foundation, bien de la versión 2 de                       //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// dicha Licencia o bien (según su elección) de cualquier versión                           //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// posterior.                                                                               //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Este programa se distribuye con la esperanza de que sea útil, pero SIN                   //</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin                      //</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la                        //</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Licencia Pública General de GNU para más detalles.                                       //</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Debería haber recibido una copia de la Licencia Pública General junto                    //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// con este programa. Si no ha sido así, escriba a la Free Software                         //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Foundation, Inc., en 675 Mass Ave, Cambridge, MA 02139, EEUU.                            //</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef __MatrizDensa__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define __MatrizDensa__</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Matriz_8hpp.html">Matriz.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMatrizDensa.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMatrizDensa.html">MatrizDensa</a>: <span class="keyword">public</span> <a class="code" href="classMatriz.html">Matriz</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> **M;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <span class="keywordtype">int</span> Estado;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <span class="keywordtype">void</span> solicitaMemoria(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#abd99cb6510e93fce52f21c005e659c99">   64</a></span>&#160;   <a class="code" href="classMatrizDensa.html#abd99cb6510e93fce52f21c005e659c99">MatrizDensa</a>(<span class="keywordtype">void</span>) : <a class="code" href="classMatriz.html">Matriz</a>()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      Estado = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      solicitaMemoria(1, 1);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="classMatriz__Base.html#a659a8b64281fa6f53ae7e3ee8fafa615">asignaNombre</a>(<span class="stringliteral">&quot;SinNombre&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#a90bcd5c7c3d58e012112f1a66d1b3a9c">   74</a></span>&#160;   <a class="code" href="classMatrizDensa.html#a90bcd5c7c3d58e012112f1a66d1b3a9c">MatrizDensa</a>(<a class="code" href="classMatrizDensa.html">MatrizDensa</a> &amp;mat) : <a class="code" href="classMatriz.html">Matriz</a>()</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      solicitaMemoria(mat.<a class="code" href="classMatriz__Base.html#a3353d37a747cfd17bc85c8bb639ae71b">renglones</a>(),mat.<a class="code" href="classMatriz__Base.html#a7407caa46518c4c701160e6b064fa4e7">columnas</a>());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="classMatriz__Base.html#a659a8b64281fa6f53ae7e3ee8fafa615">asignaNombre</a>(mat.<a class="code" href="classMatriz__Base.html#acf2a367a2fc8151f8d79f18a1e7ea342">nombre</a>());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordtype">int</span> i, j;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code" href="classMatriz__Base.html#a2ac5307d18ef6cd1df1efa7cd236ceb5">Col</a>; i++)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <span class="keywordflow">for</span> (j = 0; j &lt; <a class="code" href="classMatriz__Base.html#ae203d366be8375c12d56605e970b8446">Ren</a>; j++) M[i][j] = mat.<a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(i,j);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#aa957cf2a343649564a798b3ac556f924">   88</a></span>&#160;   <a class="code" href="classMatrizDensa.html#aa957cf2a343649564a798b3ac556f924">MatrizDensa</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col) : <a class="code" href="classMatriz.html">Matriz</a>()</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      Estado = 0;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      solicitaMemoria(ren, col);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <a class="code" href="classMatriz__Base.html#a659a8b64281fa6f53ae7e3ee8fafa615">asignaNombre</a>(<span class="stringliteral">&quot;SinNombre&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#ad41b89fcd13d173d24da26ef7af44029">   99</a></span>&#160;   <a class="code" href="classMatrizDensa.html#ad41b89fcd13d173d24da26ef7af44029">MatrizDensa</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col, <span class="keyword">const</span> <span class="keywordtype">char</span> *nmb) : <a class="code" href="classMatriz.html">Matriz</a>()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      Estado = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      solicitaMemoria(ren, col);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <a class="code" href="classMatriz__Base.html#a659a8b64281fa6f53ae7e3ee8fafa615">asignaNombre</a>(nmb);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#ac40febb812ef989caafbb340dd7dbc9c">  107</a></span>&#160;   <a class="code" href="classMatrizDensa.html#ac40febb812ef989caafbb340dd7dbc9c">~MatrizDensa</a>()</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <a class="code" href="classMatrizDensa.html#a5feb3cf25a00f8fcf27b07af6ea20ae4">liberaMemoria</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#a5feb3cf25a00f8fcf27b07af6ea20ae4">liberaMemoria</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#afad0da936f6f9ddd9dea87f605590731">  118</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#afad0da936f6f9ddd9dea87f605590731">redimensiona</a>(<span class="keywordtype">int</span> nren, <span class="keywordtype">int</span> ncol)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="classMatrizDensa.html#a5feb3cf25a00f8fcf27b07af6ea20ae4">liberaMemoria</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      solicitaMemoria(nren, ncol);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <a class="code" href="classMatrizDensa.html#adf7a5574322632b53604a0961b31a475">inicializa</a>(0.0);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;   }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#adf7a5574322632b53604a0961b31a475">inicializa</a>(<span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#ifdef DEPURAR</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">asigna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col, <span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;   <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">asigna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col, <span class="keyword">const</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> val)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;   {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      M[ren][col] = val;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;   }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;   <span class="keyword">inline</span> <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">retorna</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> ren, <span class="keyword">const</span> <span class="keywordtype">int</span> col)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;   {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <span class="keywordflow">return</span> M[ren][col];</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;   }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#a7ca5bbfd427a93247a2219eac5cc9f0d">multiplica</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> esc);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#a7ca5bbfd427a93247a2219eac5cc9f0d">multiplica</a>(<a class="code" href="classMatrizDensa.html">MatrizDensa</a> *a, <a class="code" href="classMatrizDensa.html">MatrizDensa</a> *b);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classMatrizDensa.html#a7ca5bbfd427a93247a2219eac5cc9f0d">multiplica</a>(<a class="code" href="classVector.html">Vector</a> *b, <a class="code" href="classVector.html">Vector</a> *r);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#a3df793a26b975242ab3ee105628f200e">  180</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classMatrizDensa.html#a3df793a26b975242ab3ee105628f200e">retornaNumeroColumnasBanda</a>(<span class="keywordtype">int</span> ren)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;   {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      printf(<span class="stringliteral">&quot;\nFuncion no implementada en esta clase %d\n&quot;</span>,ren);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;   }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#ae9ad9d17dd23cf9595674b8279fe2b09">  190</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classMatrizDensa.html#ae9ad9d17dd23cf9595674b8279fe2b09">retornaNumeroColumna</a>(<span class="keywordtype">int</span> ren, <span class="keywordtype">int</span> ind)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;   {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      printf(<span class="stringliteral">&quot;\nFuncion no implementada en esta clase: %d %d\n&quot;</span>,ren, ind);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;   }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="classMatrizDensa.html#a269c9b6d0709782176f37756d8df4690">  200</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="classMatrizDensa.html#a269c9b6d0709782176f37756d8df4690">retornaValorColumna</a>(<span class="keywordtype">int</span> ren, <span class="keywordtype">int</span> ind)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;   {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      printf(<span class="stringliteral">&quot;\nFuncion no implementada en esta clase: %d %d\n&quot;</span>,ren, ind);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;   }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;};</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classMatriz__Base_html_a3353d37a747cfd17bc85c8bb639ae71b"><div class="ttname"><a href="classMatriz__Base.html#a3353d37a747cfd17bc85c8bb639ae71b">Matriz_Base::renglones</a></div><div class="ttdeci">int renglones(void)</div><div class="ttdoc">Retorna el número de renglones de la matriz. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.hpp:103</div></div>
+<div class="ttc" id="classMatrizDensa_html_ad41b89fcd13d173d24da26ef7af44029"><div class="ttname"><a href="classMatrizDensa.html#ad41b89fcd13d173d24da26ef7af44029">MatrizDensa::MatrizDensa</a></div><div class="ttdeci">MatrizDensa(const int ren, const int col, const char *nmb)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:99</div></div>
+<div class="ttc" id="classMatriz__Base_html_acf2a367a2fc8151f8d79f18a1e7ea342"><div class="ttname"><a href="classMatriz__Base.html#acf2a367a2fc8151f8d79f18a1e7ea342">Matriz_Base::nombre</a></div><div class="ttdeci">char * nombre(void)</div><div class="ttdoc">Retorna el nombre de la matriz. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.hpp:96</div></div>
+<div class="ttc" id="Matriz_8hpp_html"><div class="ttname"><a href="Matriz_8hpp.html">Matriz.hpp</a></div></div>
+<div class="ttc" id="classVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdoc">Clase para el trabajar con vectores de punto flotante. </div><div class="ttdef"><b>Definition:</b> Vector.hpp:47</div></div>
+<div class="ttc" id="classMatriz_html"><div class="ttname"><a href="classMatriz.html">Matriz</a></div><div class="ttdoc">Clase base para el trabajar con matrices de punto flotante. </div><div class="ttdef"><b>Definition:</b> Matriz.hpp:44</div></div>
+<div class="ttc" id="classMatriz__Base_html_ae203d366be8375c12d56605e970b8446"><div class="ttname"><a href="classMatriz__Base.html#ae203d366be8375c12d56605e970b8446">Matriz_Base::Ren</a></div><div class="ttdeci">int Ren</div><div class="ttdoc">Número de renglones. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.hpp:64</div></div>
+<div class="ttc" id="Definiciones_8hpp_html_a8b7a76744fa99ba43b09c8fd0b715cc3"><div class="ttname"><a href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a></div><div class="ttdeci">double ldouble</div><div class="ttdoc">Define ldouble como double. </div><div class="ttdef"><b>Definition:</b> Definiciones.hpp:50</div></div>
+<div class="ttc" id="classMatrizDensa_html"><div class="ttname"><a href="classMatrizDensa.html">MatrizDensa</a></div><div class="ttdoc">Clase para el trabajar con matrices densas de punto flotante. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:44</div></div>
+<div class="ttc" id="classMatrizDensa_html_a5feb3cf25a00f8fcf27b07af6ea20ae4"><div class="ttname"><a href="classMatrizDensa.html#a5feb3cf25a00f8fcf27b07af6ea20ae4">MatrizDensa::liberaMemoria</a></div><div class="ttdeci">void liberaMemoria(void)</div><div class="ttdoc">Libera la memoria solicitada para la matriz. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.cpp:60</div></div>
+<div class="ttc" id="classMatriz__Base_html_a7407caa46518c4c701160e6b064fa4e7"><div class="ttname"><a href="classMatriz__Base.html#a7407caa46518c4c701160e6b064fa4e7">Matriz_Base::columnas</a></div><div class="ttdeci">int columnas(void)</div><div class="ttdoc">Retorna el número de columnas de la matriz. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.hpp:110</div></div>
+<div class="ttc" id="classMatrizDensa_html_a3df793a26b975242ab3ee105628f200e"><div class="ttname"><a href="classMatrizDensa.html#a3df793a26b975242ab3ee105628f200e">MatrizDensa::retornaNumeroColumnasBanda</a></div><div class="ttdeci">int retornaNumeroColumnasBanda(int ren)</div><div class="ttdoc">Retorna el número de columnas de la banda para el renglon indicado. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:180</div></div>
+<div class="ttc" id="classMatrizDensa_html_abd99cb6510e93fce52f21c005e659c99"><div class="ttname"><a href="classMatrizDensa.html#abd99cb6510e93fce52f21c005e659c99">MatrizDensa::MatrizDensa</a></div><div class="ttdeci">MatrizDensa(void)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:64</div></div>
+<div class="ttc" id="classMatrizDensa_html_a269c9b6d0709782176f37756d8df4690"><div class="ttname"><a href="classMatrizDensa.html#a269c9b6d0709782176f37756d8df4690">MatrizDensa::retornaValorColumna</a></div><div class="ttdeci">double retornaValorColumna(int ren, int ind)</div><div class="ttdoc">Retorna el valor de la columna cuando se para en el renglon e indice de la banda. ...</div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:200</div></div>
+<div class="ttc" id="classMatrizDensa_html_afad0da936f6f9ddd9dea87f605590731"><div class="ttname"><a href="classMatrizDensa.html#afad0da936f6f9ddd9dea87f605590731">MatrizDensa::redimensiona</a></div><div class="ttdeci">void redimensiona(int nren, int ncol)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:118</div></div>
+<div class="ttc" id="classMatrizDensa_html_ac40febb812ef989caafbb340dd7dbc9c"><div class="ttname"><a href="classMatrizDensa.html#ac40febb812ef989caafbb340dd7dbc9c">MatrizDensa::~MatrizDensa</a></div><div class="ttdeci">~MatrizDensa()</div><div class="ttdoc">Destructor de la clase. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:107</div></div>
+<div class="ttc" id="classMatrizDensa_html_ad51039934b942d2b373843ee54c43c4d"><div class="ttname"><a href="classMatrizDensa.html#ad51039934b942d2b373843ee54c43c4d">MatrizDensa::asigna</a></div><div class="ttdeci">void asigna(const int ren, const int col, const ldouble val)</div><div class="ttdoc">Asigna el valor indicado en el renglo y columna solicitado. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.cpp:95</div></div>
+<div class="ttc" id="classMatrizDensa_html_ae5c927db7928a0e36a1da9d91952af25"><div class="ttname"><a href="classMatrizDensa.html#ae5c927db7928a0e36a1da9d91952af25">MatrizDensa::retorna</a></div><div class="ttdeci">ldouble retorna(const int ren, const int col)</div><div class="ttdoc">Retorna el valor del renglon y columna solicitado. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.cpp:111</div></div>
+<div class="ttc" id="classMatrizDensa_html_ae9ad9d17dd23cf9595674b8279fe2b09"><div class="ttname"><a href="classMatrizDensa.html#ae9ad9d17dd23cf9595674b8279fe2b09">MatrizDensa::retornaNumeroColumna</a></div><div class="ttdeci">int retornaNumeroColumna(int ren, int ind)</div><div class="ttdoc">Retorna el número de columna cuando se para en el renglon e indice de la banda. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:190</div></div>
+<div class="ttc" id="classMatrizDensa_html_aa957cf2a343649564a798b3ac556f924"><div class="ttname"><a href="classMatrizDensa.html#aa957cf2a343649564a798b3ac556f924">MatrizDensa::MatrizDensa</a></div><div class="ttdeci">MatrizDensa(const int ren, const int col)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:88</div></div>
+<div class="ttc" id="classMatriz__Base_html_a659a8b64281fa6f53ae7e3ee8fafa615"><div class="ttname"><a href="classMatriz__Base.html#a659a8b64281fa6f53ae7e3ee8fafa615">Matriz_Base::asignaNombre</a></div><div class="ttdeci">void asignaNombre(const char *nmb)</div><div class="ttdoc">Asigna nombre a la matriz. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.cpp:42</div></div>
+<div class="ttc" id="classMatriz__Base_html_a2ac5307d18ef6cd1df1efa7cd236ceb5"><div class="ttname"><a href="classMatriz__Base.html#a2ac5307d18ef6cd1df1efa7cd236ceb5">Matriz_Base::Col</a></div><div class="ttdeci">int Col</div><div class="ttdoc">Número de columnas. </div><div class="ttdef"><b>Definition:</b> Matriz_Base.hpp:62</div></div>
+<div class="ttc" id="classMatrizDensa_html_adf7a5574322632b53604a0961b31a475"><div class="ttname"><a href="classMatrizDensa.html#adf7a5574322632b53604a0961b31a475">MatrizDensa::inicializa</a></div><div class="ttdeci">void inicializa(const ldouble val)</div><div class="ttdoc">Inicializa la matriz al valor indicado. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.cpp:78</div></div>
+<div class="ttc" id="classMatrizDensa_html_a90bcd5c7c3d58e012112f1a66d1b3a9c"><div class="ttname"><a href="classMatrizDensa.html#a90bcd5c7c3d58e012112f1a66d1b3a9c">MatrizDensa::MatrizDensa</a></div><div class="ttdeci">MatrizDensa(MatrizDensa &amp;mat)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.hpp:74</div></div>
+<div class="ttc" id="classMatrizDensa_html_a7ca5bbfd427a93247a2219eac5cc9f0d"><div class="ttname"><a href="classMatrizDensa.html#a7ca5bbfd427a93247a2219eac5cc9f0d">MatrizDensa::multiplica</a></div><div class="ttdeci">void multiplica(ldouble esc)</div><div class="ttdoc">Multiplica la matriz por el escalar pasado como parametro. </div><div class="ttdef"><b>Definition:</b> MatrizDensa.cpp:129</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el SÃ¡bado, 20 de Febrero de 2016 09:01:24 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

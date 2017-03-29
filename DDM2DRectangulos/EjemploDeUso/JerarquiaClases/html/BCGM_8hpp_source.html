@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fichero Fuente BCGM.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>PÃ¡ginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="examples.html"><span>Ejemplos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">BCGM.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="BCGM_8hpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Clase para resolver un sistema lineal mediante CGM                                       //</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Análisis y Diseño y Programación:                                                        //</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Nombre:   Antonio Carrillo Ledesma                                                       //</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// E-mail:   acl@www.mmc.geofisica.unam.mx                                                  //</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Página:   http://www.mmc.geofisica.unam.mx/acl                                           //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Este programa es software libre. Puede redistribuirlo y/o modificarlo                    //</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// bajo los términos de la Licencia Pública General de GNU según es                         //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// publicada por la Free Software Foundation, bien de la versión 2 de                       //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// dicha Licencia o bien (según su elección) de cualquier versión                           //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// posterior.                                                                               //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Este programa se distribuye con la esperanza de que sea útil, pero SIN                   //</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin                      //</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la                        //</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Licencia Pública General de GNU para más detalles.                                       //</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Debería haber recibido una copia de la Licencia Pública General junto                    //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// con este programa. Si no ha sido así, escriba a la Free Software                         //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Foundation, Inc., en 675 Mass Ave, Cambridge, MA 02139, EEUU.                            //</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef __BCGM__</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define __BCGM__</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ResuelveSistemaLineal_8hpp.html">ResuelveSistemaLineal.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MultOp_8hpp.html">MultOp.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ProductoPunto_8hpp.html">ProductoPunto.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classBCGM.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBCGM.html">BCGM</a>: <span class="keyword">public</span> <a class="code" href="classResuelveSistemaLineal.html">ResuelveSistemaLineal</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <span class="comment">// Operador</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classBCGM.html#afa1e495830375b8bde2a973db6bcefba">   52</a></span>&#160;   <a class="code" href="classMultOp.html">MultOp</a> *<a class="code" href="classBCGM.html#afa1e495830375b8bde2a973db6bcefba">A</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classBCGM.html#a475bcaa3f0132049dcf30b0636e08683">   55</a></span>&#160;   <a class="code" href="classProductoPunto.html">ProductoPunto</a> *<a class="code" href="classBCGM.html#a475bcaa3f0132049dcf30b0636e08683">prodP</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classBCGM.html#a3fc4c03a9aa067653cf00d1efe6eddee">   58</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classBCGM.html#a3fc4c03a9aa067653cf00d1efe6eddee">Iter</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classBCGM.html#ad143847d4c4352c16c334bdb867a75b9">   61</a></span>&#160;   <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> <a class="code" href="classBCGM.html#ad143847d4c4352c16c334bdb867a75b9">Ep</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classBCGM.html#a2bbca97e0d9f238cf4fc415b0912b298">   71</a></span>&#160;   <a class="code" href="classBCGM.html#a2bbca97e0d9f238cf4fc415b0912b298">BCGM</a>(<a class="code" href="classMultOp.html">MultOp</a> &amp;a, <a class="code" href="classProductoPunto.html">ProductoPunto</a> &amp;prod, <span class="keywordtype">int</span> iter, <a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> ep) : <a class="code" href="classResuelveSistemaLineal.html">ResuelveSistemaLineal</a>()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      A = &amp;a;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      prodP = &amp;prod;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      Iter = iter;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      Ep = ep;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;   }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classBCGM.html#aea966b98d985b52b902eb502b36de06d">resuelve</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classBCGM.html#a1dea7bd2508046cfe4935478506ec1d3">   86</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classBCGM.html#a1dea7bd2508046cfe4935478506ec1d3">resuelve</a>(<a class="code" href="classVector.html">Vector</a> *x, <a class="code" href="classVector.html">Vector</a> *b)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <a class="code" href="classResuelveSistemaLineal.html#a28f4adc8f0b91d577ea14199dab4cc8b">X</a> = x;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="classResuelveSistemaLineal.html#a6e75d2b40f3b71f8414ea41e8cac3c86">B</a> = b;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <a class="code" href="classBCGM.html#aea966b98d985b52b902eb502b36de06d">resuelve</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classBCGM.html#a663ff47942e87dbd644121f24cd0ee90">   95</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classBCGM.html#a663ff47942e87dbd644121f24cd0ee90">tolerancia</a>(<a class="code" href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a> eps)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   {   </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        Ep = eps;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classBCGM.html#a2f21bc4a007ec787b52164aa1b5fff2b">  102</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classBCGM.html#a2f21bc4a007ec787b52164aa1b5fff2b">iteraciones</a>(<span class="keywordtype">int</span> iter)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   {   </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Iter = iter;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classBCGM_html_a2bbca97e0d9f238cf4fc415b0912b298"><div class="ttname"><a href="classBCGM.html#a2bbca97e0d9f238cf4fc415b0912b298">BCGM::BCGM</a></div><div class="ttdeci">BCGM(MultOp &amp;a, ProductoPunto &amp;prod, int iter, ldouble ep)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:71</div></div>
+<div class="ttc" id="classMultOp_html"><div class="ttname"><a href="classMultOp.html">MultOp</a></div><div class="ttdoc">Clase para implementar la multiplicación de la matriz por el vector. </div><div class="ttdef"><b>Definition:</b> MultOp.hpp:42</div></div>
+<div class="ttc" id="classBCGM_html_a3fc4c03a9aa067653cf00d1efe6eddee"><div class="ttname"><a href="classBCGM.html#a3fc4c03a9aa067653cf00d1efe6eddee">BCGM::Iter</a></div><div class="ttdeci">int Iter</div><div class="ttdoc">Número máximo de iteraciones. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:58</div></div>
+<div class="ttc" id="classBCGM_html_a1dea7bd2508046cfe4935478506ec1d3"><div class="ttname"><a href="classBCGM.html#a1dea7bd2508046cfe4935478506ec1d3">BCGM::resuelve</a></div><div class="ttdeci">void resuelve(Vector *x, Vector *b)</div><div class="ttdoc">Resuelve el sistema lineal. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:86</div></div>
+<div class="ttc" id="classVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdoc">Clase para el trabajar con vectores de punto flotante. </div><div class="ttdef"><b>Definition:</b> Vector.hpp:47</div></div>
+<div class="ttc" id="classBCGM_html_a663ff47942e87dbd644121f24cd0ee90"><div class="ttname"><a href="classBCGM.html#a663ff47942e87dbd644121f24cd0ee90">BCGM::tolerancia</a></div><div class="ttdeci">void tolerancia(ldouble eps)</div><div class="ttdoc">Establece la tolerancia del metodo. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:95</div></div>
+<div class="ttc" id="Definiciones_8hpp_html_a8b7a76744fa99ba43b09c8fd0b715cc3"><div class="ttname"><a href="Definiciones_8hpp.html#a8b7a76744fa99ba43b09c8fd0b715cc3">ldouble</a></div><div class="ttdeci">double ldouble</div><div class="ttdoc">Define ldouble como double. </div><div class="ttdef"><b>Definition:</b> Definiciones.hpp:50</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html"><div class="ttname"><a href="classResuelveSistemaLineal.html">ResuelveSistemaLineal</a></div><div class="ttdoc">Clase para resolución del sistema lineal. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:66</div></div>
+<div class="ttc" id="classProductoPunto_html"><div class="ttname"><a href="classProductoPunto.html">ProductoPunto</a></div><div class="ttdoc">Clase para implementar el producto punto. </div><div class="ttdef"><b>Definition:</b> ProductoPunto.hpp:43</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a6e75d2b40f3b71f8414ea41e8cac3c86"><div class="ttname"><a href="classResuelveSistemaLineal.html#a6e75d2b40f3b71f8414ea41e8cac3c86">ResuelveSistemaLineal::B</a></div><div class="ttdeci">Vector * B</div><div class="ttdoc">Vactor lado derecho. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:82</div></div>
+<div class="ttc" id="classBCGM_html_afa1e495830375b8bde2a973db6bcefba"><div class="ttname"><a href="classBCGM.html#afa1e495830375b8bde2a973db6bcefba">BCGM::A</a></div><div class="ttdeci">MultOp * A</div><div class="ttdef"><b>Definition:</b> BCGM.hpp:52</div></div>
+<div class="ttc" id="classBCGM_html_ad143847d4c4352c16c334bdb867a75b9"><div class="ttname"><a href="classBCGM.html#ad143847d4c4352c16c334bdb867a75b9">BCGM::Ep</a></div><div class="ttdeci">ldouble Ep</div><div class="ttdoc">Tolerancia. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:61</div></div>
+<div class="ttc" id="ResuelveSistemaLineal_8hpp_html"><div class="ttname"><a href="ResuelveSistemaLineal_8hpp.html">ResuelveSistemaLineal.hpp</a></div></div>
+<div class="ttc" id="classBCGM_html_a475bcaa3f0132049dcf30b0636e08683"><div class="ttname"><a href="classBCGM.html#a475bcaa3f0132049dcf30b0636e08683">BCGM::prodP</a></div><div class="ttdeci">ProductoPunto * prodP</div><div class="ttdoc">Producto Punto. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:55</div></div>
+<div class="ttc" id="classBCGM_html_a2f21bc4a007ec787b52164aa1b5fff2b"><div class="ttname"><a href="classBCGM.html#a2f21bc4a007ec787b52164aa1b5fff2b">BCGM::iteraciones</a></div><div class="ttdeci">void iteraciones(int iter)</div><div class="ttdoc">Establece el maximo numero de iteraciones. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:102</div></div>
+<div class="ttc" id="classBCGM_html_aea966b98d985b52b902eb502b36de06d"><div class="ttname"><a href="classBCGM.html#aea966b98d985b52b902eb502b36de06d">BCGM::resuelve</a></div><div class="ttdeci">void resuelve(void)</div><div class="ttdoc">Resuelve el sistema lineal. </div><div class="ttdef"><b>Definition:</b> BCGM.cpp:34</div></div>
+<div class="ttc" id="classBCGM_html"><div class="ttname"><a href="classBCGM.html">BCGM</a></div><div class="ttdoc">Clase para resolución del sistema lineal mediante CGM. </div><div class="ttdef"><b>Definition:</b> BCGM.hpp:45</div></div>
+<div class="ttc" id="MultOp_8hpp_html"><div class="ttname"><a href="MultOp_8hpp.html">MultOp.hpp</a></div></div>
+<div class="ttc" id="ProductoPunto_8hpp_html"><div class="ttname"><a href="ProductoPunto_8hpp.html">ProductoPunto.hpp</a></div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a28f4adc8f0b91d577ea14199dab4cc8b"><div class="ttname"><a href="classResuelveSistemaLineal.html#a28f4adc8f0b91d577ea14199dab4cc8b">ResuelveSistemaLineal::X</a></div><div class="ttdeci">Vector * X</div><div class="ttdoc">Vector solución </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:80</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el SÃ¡bado, 20 de Febrero de 2016 09:01:24 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

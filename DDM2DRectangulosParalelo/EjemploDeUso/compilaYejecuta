@@ -1,0 +1,6 @@
+rm -f me
+mpiCC.mpich -O1 *.cpp -o me -lm
+rm -f *.o
+lamboot -v
+mpirun.mpich -np 3 me -nx 3
+lamhalt -v

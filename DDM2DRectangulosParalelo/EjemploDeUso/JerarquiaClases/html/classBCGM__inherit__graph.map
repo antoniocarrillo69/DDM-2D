@@ -1,0 +1,7 @@
+<map id="BCGM" name="BCGM">
+<area shape="rect" id="node3" href="$classDDM__Schur.html" title="Clase para definir el método descomposición de dominio de subestructuración (Complemento de Schur) ..." alt="" coords="31,155,128,181"/>
+<area shape="rect" id="node5" href="$classResuelveCGM.html" title="Clase para resolución del sistema lineal mediante CGM standard. " alt="" coords="175,155,283,181"/>
+<area shape="rect" id="node2" href="$classResuelveSistemaLineal.html" title="Clase para resolución del sistema lineal. " alt="" coords="58,5,226,32"/>
+<area shape="rect" id="node4" href="$classDDM__Schur__MPI.html" title="Clase para definir el Esquema Maestro&#45;Esclavo del método de descomposición de dominio de subestructurac..." alt="" coords="5,229,132,256"/>
+<area shape="rect" id="node6" href="$classResuelveCGMBandDisp.html" title="Clase para resolución del sistema lineal mediante CGM. " alt="" coords="156,229,325,256"/>
+</map>

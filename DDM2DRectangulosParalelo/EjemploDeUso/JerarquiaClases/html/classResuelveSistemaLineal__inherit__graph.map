@@ -1,0 +1,9 @@
+<map id="ResuelveSistemaLineal" name="ResuelveSistemaLineal">
+<area shape="rect" id="node2" href="$classBCGM.html" title="Clase para resolución del sistema lineal mediante CGM. " alt="" coords="198,80,259,107"/>
+<area shape="rect" id="node7" href="$classResuelveFactorizacionLU.html" title="Clase para resolución del sistema lineal usando factorizacion LU. " alt="" coords="311,80,488,107"/>
+<area shape="rect" id="node3" href="$classDDM__Schur.html" title="Clase para definir el método descomposición de dominio de subestructuración (Complemento de Schur) ..." alt="" coords="31,155,128,181"/>
+<area shape="rect" id="node5" href="$classResuelveCGM.html" title="Clase para resolución del sistema lineal mediante CGM standard. " alt="" coords="175,155,283,181"/>
+<area shape="rect" id="node4" href="$classDDM__Schur__MPI.html" title="Clase para definir el Esquema Maestro&#45;Esclavo del método de descomposición de dominio de subestructurac..." alt="" coords="5,229,132,256"/>
+<area shape="rect" id="node6" href="$classResuelveCGMBandDisp.html" title="Clase para resolución del sistema lineal mediante CGM. " alt="" coords="156,229,325,256"/>
+<area shape="rect" id="node8" href="$classResuelveFactorizacionLUBandDisp.html" title="Clase para resolución del sistema lineal usando factorizacion LU. " alt="" coords="307,155,545,181"/>
+</map>

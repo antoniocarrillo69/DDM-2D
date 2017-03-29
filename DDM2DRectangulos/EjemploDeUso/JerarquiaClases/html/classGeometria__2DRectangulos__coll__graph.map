@@ -1,0 +1,11 @@
+<map id="Geometria_2DRectangulos" name="Geometria_2DRectangulos">
+<area shape="rect" id="node2" href="$classGeometria__2D.html" title="Clase base para generar una geometria en 2D. " alt="" coords="138,380,253,407"/>
+<area shape="rect" id="node3" href="$classGeometria.html" title="Clase base para generar una geometria. " alt="" coords="150,304,241,331"/>
+<area shape="rect" id="node4" href="$classMatrizDensa.html" title="Clase para el trabajar con matrices densas de punto flotante. " alt="" coords="5,184,108,211"/>
+<area shape="rect" id="node5" href="$classMatriz.html" title="Clase base para el trabajar con matrices de punto flotante. " alt="" coords="18,81,79,108"/>
+<area shape="rect" id="node6" href="$classMatriz__Base.html" title="Clase base para el trabajar con matrices. " alt="" coords="67,5,167,32"/>
+<area shape="rect" id="node7" href="$classMatrizInt.html" title="Clase para el trabajar con matrices con etradas enteras. " alt="" coords="69,132,146,159"/>
+<area shape="rect" id="node10" href="$classMatrizTamanoVariable.html" title="Clase para el trabajar con matrices de tamaño variable. " alt="" coords="153,132,315,159"/>
+<area shape="rect" id="node8" href="$classVectorInt.html" title="Clase para el trabajar con vectores con valores enteros. " alt="" coords="288,184,367,211"/>
+<area shape="rect" id="node9" href="$classVector__Base.html" title="Clase base para el trabajar con vectores. " alt="" coords="284,81,387,108"/>
+</map>

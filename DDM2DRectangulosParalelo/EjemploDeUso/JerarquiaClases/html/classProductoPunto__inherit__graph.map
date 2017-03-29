@@ -1,0 +1,6 @@
+<map id="ProductoPunto" name="ProductoPunto">
+<area shape="rect" id="node2" href="$classDDM__Schur.html" title="Clase para definir el método descomposición de dominio de subestructuración (Complemento de Schur) ..." alt="" coords="31,80,128,107"/>
+<area shape="rect" id="node4" href="$classResuelveCGM.html" title="Clase para resolución del sistema lineal mediante CGM standard. " alt="" coords="175,80,283,107"/>
+<area shape="rect" id="node3" href="$classDDM__Schur__MPI.html" title="Clase para definir el Esquema Maestro&#45;Esclavo del método de descomposición de dominio de subestructurac..." alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node5" href="$classResuelveCGMBandDisp.html" title="Clase para resolución del sistema lineal mediante CGM. " alt="" coords="156,155,325,181"/>
+</map>

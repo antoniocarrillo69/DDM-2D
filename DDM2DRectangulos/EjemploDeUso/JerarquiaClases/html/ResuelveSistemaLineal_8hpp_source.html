@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Fichero Fuente ResuelveSistemaLineal.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>PÃ¡ginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="examples.html"><span>Ejemplos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ResuelveSistemaLineal.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ResuelveSistemaLineal_8hpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Clase para resolver un sistema lineal                                                    //</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Revisión: 1 de Junio del 2006                                                            //</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Análisis y Diseño y Programación:                                                        //</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Nombre:   Antonio Carrillo Ledesma                                                       //</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// E-mail:   acl@www.mmc.igeofcu.unam.mx                                                    //</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// Página:   http://www.mmc.igeofcu.unam.mx/acl                                             //</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Este programa es software libre. Puede redistribuirlo y/o modificarlo                    //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// bajo los términos de la Licencia Pública General de GNU según es                         //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// publicada por la Free Software Foundation, bien de la versión 2 de                       //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// dicha Licencia o bien (según su elección) de cualquier versión                           //</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// posterior.                                                                               //</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Este programa se distribuye con la esperanza de que sea útil, pero SIN                   //</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin                      //</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la                        //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Licencia Pública General de GNU para más detalles.                                       //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Debería haber recibido una copia de la Licencia Pública General junto                    //</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// con este programa. Si no ha sido así, escriba a la Free Software                         //</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Foundation, Inc., en 675 Mass Ave, Cambridge, MA 02139, EEUU.                            //</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//                                                                                          //</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifndef __ResuelveSistemaLineal__</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define __ResuelveSistemaLineal__</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Matriz_8hpp.html">Matriz.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Método numérico</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#ac374e41a765a4e6456bd4af07e595b5a">   42</a></span>&#160;<span class="preprocessor">#define CGM            0</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#afefd32ccfdfa67fd4e4870350dbd6b38">   43</a></span>&#160;<span class="preprocessor">#define FACT_LU        1</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#aa96e6c05d19723174fb142b8151da1b6">   44</a></span>&#160;<span class="preprocessor">#define GAUSSSEIDEL    2</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#a536a164c94dc6d1f7c8cd78c4006eba8">   45</a></span>&#160;<span class="preprocessor">#define INVERSA        3</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#a757914ed6297a006d7fd30933340d009">   46</a></span>&#160;<span class="preprocessor">#define JACOBI         4</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#a0c2a9787327cdf446517994aa037a20b">   47</a></span>&#160;<span class="preprocessor">#define TRIDIAGONAL    5</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#aa00d090a4e416a4730bd139503cfa4d9">   48</a></span>&#160;<span class="preprocessor">#define FACT_CHOLESKI  6</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Nombre del método</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> Nmb[][50]= {<span class="stringliteral">&quot;CGM&quot;</span>,<span class="stringliteral">&quot;Factorización LU&quot;</span>,<span class="stringliteral">&quot;Gauss-Seidel&quot;</span>,<span class="stringliteral">&quot;Inversa&quot;</span>,<span class="stringliteral">&quot;Jacobi&quot;</span>,<span class="stringliteral">&quot;Tridiagonal&quot;</span>,<span class="stringliteral">&quot;Choleski&quot;</span>};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// Requiere matriz del tipo Bandada, Dispersa, Densa</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#aa08e0e41b07759cffc6983b9bca0f119">   55</a></span>&#160;<span class="preprocessor">#define REQUIERE_MAT_BAND   0</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#a5f7c3b80f6f5131ddf8904ffafa44afa">   56</a></span>&#160;<span class="preprocessor">#define REQUIERE_MAT_DISP   1</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="ResuelveSistemaLineal_8hpp.html#ab1446a8180a6c7eadec76d40f87f90af">   57</a></span>&#160;<span class="preprocessor">#define REQUIERE_MAT_DENS   2</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html">   66</a></span>&#160;<span class="keyword">class </span><a class="code" href="classResuelveSistemaLineal.html">ResuelveSistemaLineal</a></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a39fde9d4c8593dbf43015bdd8c47e533">   71</a></span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classResuelveSistemaLineal.html#a39fde9d4c8593dbf43015bdd8c47e533">MetodoModificaMatriz</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a6d29f9283647e58b44a72eb2dd54a1cc">   73</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classResuelveSistemaLineal.html#a6d29f9283647e58b44a72eb2dd54a1cc">NumIteraciones</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a5f552b266aba818cf81e5e3df307023f">   75</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classResuelveSistemaLineal.html#a5f552b266aba818cf81e5e3df307023f">MetodoNumerico</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a5d31ebb546fa47c46c5cc95b7faf36fb">   77</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classResuelveSistemaLineal.html#a5d31ebb546fa47c46c5cc95b7faf36fb">RequiereMatriz</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a28f4adc8f0b91d577ea14199dab4cc8b">   80</a></span>&#160;   <a class="code" href="classVector.html">Vector</a> *<a class="code" href="classResuelveSistemaLineal.html#a28f4adc8f0b91d577ea14199dab4cc8b">X</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a6e75d2b40f3b71f8414ea41e8cac3c86">   82</a></span>&#160;   <a class="code" href="classVector.html">Vector</a> *<a class="code" href="classResuelveSistemaLineal.html#a6e75d2b40f3b71f8414ea41e8cac3c86">B</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a9e5ba9744476c6c83792398ea42cfe23">   84</a></span>&#160;   <a class="code" href="classMatriz.html">Matriz</a> *<a class="code" href="classResuelveSistemaLineal.html#a9e5ba9744476c6c83792398ea42cfe23">M</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a3df99f2d7d0be7f49c20bb47572d6950">   88</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classResuelveSistemaLineal.html#a3df99f2d7d0be7f49c20bb47572d6950">error</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *txt)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      printf(<span class="stringliteral">&quot;\nError resolver el sistema Lineal: %s\n\n&quot;</span>,txt);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      exit(1);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;   }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#aee5f2d9b20276c6a2ab540ecdf36b868">  101</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classResuelveSistemaLineal.html#aee5f2d9b20276c6a2ab540ecdf36b868">inicializa</a>(<a class="code" href="classMatriz.html">Matriz</a> *m, <a class="code" href="classVector.html">Vector</a> *b, <a class="code" href="classVector.html">Vector</a> *x)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      M = m;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      X = x;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      B = b;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a8045cd1b77bf73a6ddc16a2f15609346">  109</a></span>&#160;   <a class="code" href="classResuelveSistemaLineal.html#a8045cd1b77bf73a6ddc16a2f15609346">ResuelveSistemaLineal</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      NumIteraciones = 0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classResuelveSistemaLineal.html#a8c87d3ee1baf12014c720cbb15b448b3">resuelve</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classResuelveSistemaLineal.html#a8c87d3ee1baf12014c720cbb15b448b3">resuelve</a>(<a class="code" href="classVector.html">Vector</a> *b, <a class="code" href="classVector.html">Vector</a> *x) = 0;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;   </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;   </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a7470e672d5323637894c768bd99c8aa6">  125</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classResuelveSistemaLineal.html#a7470e672d5323637894c768bd99c8aa6">retornaNumeroIteraciones</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;   {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classResuelveSistemaLineal.html#a6d29f9283647e58b44a72eb2dd54a1cc">NumIteraciones</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;   }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a851e75cd56d6efe42314725afe4336fa">  132</a></span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classResuelveSistemaLineal.html#a851e75cd56d6efe42314725afe4336fa">elMetodoModificaMatriz</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;   {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classResuelveSistemaLineal.html#a39fde9d4c8593dbf43015bdd8c47e533">MetodoModificaMatriz</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;   }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a3c5dfdbdb306cc7761943d2c68c30b34">  139</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classResuelveSistemaLineal.html#a3c5dfdbdb306cc7761943d2c68c30b34">retornaMetodoNumerico</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;   {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classResuelveSistemaLineal.html#a5f552b266aba818cf81e5e3df307023f">MetodoNumerico</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;   }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#a81209f6d4b64ae45415aa469ca0a1f51">  146</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classResuelveSistemaLineal.html#a81209f6d4b64ae45415aa469ca0a1f51">retornaRequiereMatriz</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classResuelveSistemaLineal.html#a5d31ebb546fa47c46c5cc95b7faf36fb">RequiereMatriz</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;   }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classResuelveSistemaLineal.html#ae1aa3d6748d060df4b1e97ac49b061d3">  152</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classResuelveSistemaLineal.html#ae1aa3d6748d060df4b1e97ac49b061d3">informacionMetodo</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;   {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">if</span> (MetodoModificaMatriz) printf(<span class="stringliteral">&quot;\nMétodo %s para resolver el sistema lineal\n&quot;</span>,Nmb[MetodoNumerico]);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="keywordflow">else</span> printf(<span class="stringliteral">&quot;\nMétodo %s, iteraciones para resolver el sistema lineal %d\n&quot;</span>,Nmb[MetodoNumerico],NumIteraciones);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;   }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="Matriz_8hpp_html"><div class="ttname"><a href="Matriz_8hpp.html">Matriz.hpp</a></div></div>
+<div class="ttc" id="classVector_html"><div class="ttname"><a href="classVector.html">Vector</a></div><div class="ttdoc">Clase para el trabajar con vectores de punto flotante. </div><div class="ttdef"><b>Definition:</b> Vector.hpp:47</div></div>
+<div class="ttc" id="classMatriz_html"><div class="ttname"><a href="classMatriz.html">Matriz</a></div><div class="ttdoc">Clase base para el trabajar con matrices de punto flotante. </div><div class="ttdef"><b>Definition:</b> Matriz.hpp:44</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a8c87d3ee1baf12014c720cbb15b448b3"><div class="ttname"><a href="classResuelveSistemaLineal.html#a8c87d3ee1baf12014c720cbb15b448b3">ResuelveSistemaLineal::resuelve</a></div><div class="ttdeci">virtual void resuelve(void)=0</div><div class="ttdoc">Resuelve el sistema lineal. </div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html"><div class="ttname"><a href="classResuelveSistemaLineal.html">ResuelveSistemaLineal</a></div><div class="ttdoc">Clase para resolución del sistema lineal. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:66</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a3df99f2d7d0be7f49c20bb47572d6950"><div class="ttname"><a href="classResuelveSistemaLineal.html#a3df99f2d7d0be7f49c20bb47572d6950">ResuelveSistemaLineal::error</a></div><div class="ttdeci">void error(const char *txt)</div><div class="ttdoc">Visualiza el error indicado y termina el programa. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:88</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a7470e672d5323637894c768bd99c8aa6"><div class="ttname"><a href="classResuelveSistemaLineal.html#a7470e672d5323637894c768bd99c8aa6">ResuelveSistemaLineal::retornaNumeroIteraciones</a></div><div class="ttdeci">int retornaNumeroIteraciones(void)</div><div class="ttdoc">Retorna el número de iteraciones en la resolución del sistema lineal. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:125</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a6e75d2b40f3b71f8414ea41e8cac3c86"><div class="ttname"><a href="classResuelveSistemaLineal.html#a6e75d2b40f3b71f8414ea41e8cac3c86">ResuelveSistemaLineal::B</a></div><div class="ttdeci">Vector * B</div><div class="ttdoc">Vactor lado derecho. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:82</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a5f552b266aba818cf81e5e3df307023f"><div class="ttname"><a href="classResuelveSistemaLineal.html#a5f552b266aba818cf81e5e3df307023f">ResuelveSistemaLineal::MetodoNumerico</a></div><div class="ttdeci">int MetodoNumerico</div><div class="ttdoc">Método Numerico. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:75</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a3c5dfdbdb306cc7761943d2c68c30b34"><div class="ttname"><a href="classResuelveSistemaLineal.html#a3c5dfdbdb306cc7761943d2c68c30b34">ResuelveSistemaLineal::retornaMetodoNumerico</a></div><div class="ttdeci">int retornaMetodoNumerico(void)</div><div class="ttdoc">Retorna el método numérico. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:139</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a5d31ebb546fa47c46c5cc95b7faf36fb"><div class="ttname"><a href="classResuelveSistemaLineal.html#a5d31ebb546fa47c46c5cc95b7faf36fb">ResuelveSistemaLineal::RequiereMatriz</a></div><div class="ttdeci">int RequiereMatriz</div><div class="ttdoc">Requiere matriz del tipo Bandada, Dispersa, Densa. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:77</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_aee5f2d9b20276c6a2ab540ecdf36b868"><div class="ttname"><a href="classResuelveSistemaLineal.html#aee5f2d9b20276c6a2ab540ecdf36b868">ResuelveSistemaLineal::inicializa</a></div><div class="ttdeci">void inicializa(Matriz *m, Vector *b, Vector *x)</div><div class="ttdoc">Resuelve el sistema lineal. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:101</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a81209f6d4b64ae45415aa469ca0a1f51"><div class="ttname"><a href="classResuelveSistemaLineal.html#a81209f6d4b64ae45415aa469ca0a1f51">ResuelveSistemaLineal::retornaRequiereMatriz</a></div><div class="ttdeci">int retornaRequiereMatriz(void)</div><div class="ttdoc">Retorna el tipo de matriz que requiere el método. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:146</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a9e5ba9744476c6c83792398ea42cfe23"><div class="ttname"><a href="classResuelveSistemaLineal.html#a9e5ba9744476c6c83792398ea42cfe23">ResuelveSistemaLineal::M</a></div><div class="ttdeci">Matriz * M</div><div class="ttdoc">Matriz. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:84</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a39fde9d4c8593dbf43015bdd8c47e533"><div class="ttname"><a href="classResuelveSistemaLineal.html#a39fde9d4c8593dbf43015bdd8c47e533">ResuelveSistemaLineal::MetodoModificaMatriz</a></div><div class="ttdeci">bool MetodoModificaMatriz</div><div class="ttdoc">Indica si el método numérico modifica la matriz. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:71</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a8045cd1b77bf73a6ddc16a2f15609346"><div class="ttname"><a href="classResuelveSistemaLineal.html#a8045cd1b77bf73a6ddc16a2f15609346">ResuelveSistemaLineal::ResuelveSistemaLineal</a></div><div class="ttdeci">ResuelveSistemaLineal(void)</div><div class="ttdoc">Constructor de la clase. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:109</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_ae1aa3d6748d060df4b1e97ac49b061d3"><div class="ttname"><a href="classResuelveSistemaLineal.html#ae1aa3d6748d060df4b1e97ac49b061d3">ResuelveSistemaLineal::informacionMetodo</a></div><div class="ttdeci">void informacionMetodo(void)</div><div class="ttdoc">Visualiza la información del método. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:152</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a851e75cd56d6efe42314725afe4336fa"><div class="ttname"><a href="classResuelveSistemaLineal.html#a851e75cd56d6efe42314725afe4336fa">ResuelveSistemaLineal::elMetodoModificaMatriz</a></div><div class="ttdeci">bool elMetodoModificaMatriz(void)</div><div class="ttdoc">Indica si el método numérico modifica la matriz. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:132</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a6d29f9283647e58b44a72eb2dd54a1cc"><div class="ttname"><a href="classResuelveSistemaLineal.html#a6d29f9283647e58b44a72eb2dd54a1cc">ResuelveSistemaLineal::NumIteraciones</a></div><div class="ttdeci">int NumIteraciones</div><div class="ttdoc">Numero de iteraciones en la resolución del sistema lineal. </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:73</div></div>
+<div class="ttc" id="classResuelveSistemaLineal_html_a28f4adc8f0b91d577ea14199dab4cc8b"><div class="ttname"><a href="classResuelveSistemaLineal.html#a28f4adc8f0b91d577ea14199dab4cc8b">ResuelveSistemaLineal::X</a></div><div class="ttdeci">Vector * X</div><div class="ttdoc">Vector solución </div><div class="ttdef"><b>Definition:</b> ResuelveSistemaLineal.hpp:80</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el SÃ¡bado, 20 de Febrero de 2016 09:01:24 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>
